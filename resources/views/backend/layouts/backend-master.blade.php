@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Tieu Long Lanh Kute -->
-<!-- Added by HTTrack -->
+<base href="{{ asset('/') }}">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -12,11 +10,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-	<link rel="shortcut icon" href="{{ url('/') }}/public/img/fav.png">
+	<link rel="shortcut icon" href="img/fav.png">
     <!-- END META SECTION -->
 
     <!-- CSS INCLUDE -->
-    <link rel="stylesheet" type="text/css" id="theme" href="{{ url('/') }}/public/admin/css/theme-default.css" />
+    <link rel="stylesheet" type="text/css" id="theme" href="admin/css/theme-default.css" />
     <!-- EOF CSS INCLUDE -->
 </head>
 
@@ -83,48 +81,48 @@
     <!-- END MESSAGE BOX-->
 
     <!-- START PRELOADS -->
-    <audio id="audio-alert" src="{{ url('/') }}/public/admin/audio/alert.mp3" preload="auto"></audio>
-    <audio id="audio-fail" src="{{ url('/') }}/public/admin/audio/fail.mp3" preload="auto"></audio>
+    <audio id="audio-alert" src="admin/audio/alert.mp3" preload="auto"></audio>
+    <audio id="audio-fail" src="admin/audio/fail.mp3" preload="auto"></audio>
     <!-- END PRELOADS -->
     <!-- START SCRIPTS -->
     <!-- START PLUGINS -->
-    <script src="{{ url('/') }}/public/admin/js/plugins/jquery/jquery.min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/jquery/jquery-ui.min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="admin/js/plugins/jquery/jquery.min.js"></script>
+    <script src="admin/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script src="admin/js/plugins/bootstrap/bootstrap.min.js"></script>
 
-    <script src="{{ url('/') }}/public/admin/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/bootstrap/bootstrap-file-input.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/bootstrap/bootstrap-select.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
+    <script src="admin/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
+    <script src="admin/js/plugins/bootstrap/bootstrap-file-input.js"></script>
+    <script src="admin/js/plugins/bootstrap/bootstrap-select.js"></script>
+    <script src="admin/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
     <!-- END PLUGINS -->
 
     <!-- START THIS PAGE PLUGINS-->
     <script src="https://www.google-analytics.com/analytics.js"></script>
-    <script src='{{ url('/') }}/public/admin/js/plugins/icheck/icheck.min.js'></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/demo_tables.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/morris/raphael-min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/morris/morris.min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/rickshaw/d3.v3.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/rickshaw/rickshaw.min.js"></script>
-    <script src='{{ url('/') }}/public/admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
-    <script src='{{ url('/') }}/public/admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
-    <script src='{{ url('/') }}/public/admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/owl/owl.carousel.min.js"></script>
+    <script src='admin/js/plugins/icheck/icheck.min.js'></script>
+    <script src="admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
+    <script src="admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
+    <script src="admin/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
+    <script src="admin/js/demo_tables.js"></script>
+    <script src="admin/js/plugins/morris/raphael-min.js"></script>
+    <script src="admin/js/plugins/morris/morris.min.js"></script>
+    <script src="admin/js/plugins/rickshaw/d3.v3.js"></script>
+    <script src="admin/js/plugins/rickshaw/rickshaw.min.js"></script>
+    <script src='admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
+    <script src='admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
+    <script src='admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+    <script src="admin/js/plugins/owl/owl.carousel.min.js"></script>
 
-    <script src="{{ url('/') }}/public/admin/js/plugins/moment.min.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/plugins/daterangepicker/daterangepicker.js"></script>
+    <script src="admin/js/plugins/moment.min.js"></script>
+    <script src="admin/js/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- END THIS PAGE PLUGINS-->
 
     <!-- START TEMPLATE -->
-    {{-- <script src="{{ url('/') }}/public/admin/js/settings.js"></script> --}}
+    {{-- <script src="admin/js/settings.js"></script> --}}
 
-    <script src="{{ url('/') }}/public/admin/js/plugins.js"></script>
-    <script src="{{ url('/') }}/public/admin/js/actions.js"></script>
+    <script src="admin/js/plugins.js"></script>
+    <script src="admin/js/actions.js"></script>
 
-    <script src="{{ url('/') }}/public/admin/js/demo_dashboard.js"></script>
+    <script src="admin/js/demo_dashboard.js"></script>
     <!-- END TEMPLATE -->
     <!-- END SCRIPTS -->
 

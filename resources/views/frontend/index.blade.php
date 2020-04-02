@@ -1,7 +1,5 @@
 @extends('layouts.master')
-
 @section('main')
-		<!-- start banner Area -->
 		<section class="banner-area">
 			<div class="container">
 				<div class="row fullscreen align-items-center justify-content-start">
@@ -21,7 +19,7 @@
 								</div>
 								<div class="col-lg-7">
 									<div class="banner-img">
-										<img class="img-fluid" src="{{ url('/') }}/public/img/banner/banner-img.png" alt="">
+										<img class="img-fluid" src="img/banner/banner-img.png" alt="">
 									</div>
 								</div>
 							</div>
@@ -39,7 +37,7 @@
 								</div>
 								<div class="col-lg-7">
 									<div class="banner-img">
-										<img class="img-fluid" src="{{ url('/') }}/public/img/banner/banner-img.png" alt="">
+										<img class="img-fluid" src="img/banner/banner-img.png" alt="">
 									</div>
 								</div>
 							</div>
@@ -58,7 +56,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="single-features">
 							<div class="f-icon">
-								<img src="{{ url('/') }}/public/img/features/f-icon1.png" alt="">
+								<img src="img/features/f-icon1.png" alt="">
 							</div>
 							<h6>Miễn phí vận chuyển</h6>
 							<p>Miễn phí vận chuyển toàn quốc</p>
@@ -68,7 +66,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="single-features">
 							<div class="f-icon">
-								<img src="{{ url('/') }}/public/img/features/f-icon2.png" alt="">
+								<img src="img/features/f-icon2.png" alt="">
 							</div>
 							<h6>Chính sách đổi trả</h6>
 							<p>Chính sách đổi trả đặc biệt</p>
@@ -78,7 +76,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="single-features">
 							<div class="f-icon">
-								<img src="{{ url('/') }}/public/img/features/f-icon3.png" alt="">
+								<img src="img/features/f-icon3.png" alt="">
 							</div>
 							<h6>Hỗ trợ 24/7</h6>
 							<p>Luôn lắng nghe ý kiến khách hàng</p>
@@ -88,7 +86,7 @@
 					<div class="col-lg-3 col-md-6 col-sm-6">
 						<div class="single-features">
 							<div class="f-icon">
-								<img src="{{ url('/') }}/public/img/features/f-icon4.png" alt="">
+								<img src="img/features/f-icon4.png" alt="">
 							</div>
 							<h6>Bảo mật thanh toán</h6>
 							<p>Thanh toán an toàn, nhanh chóng</p>
@@ -108,8 +106,8 @@
 							<div class="col-lg-8 col-md-8">
 								<div class="single-deal">
 									<div class="overlay"></div>
-									<img class="img-fluid w-100" src="{{ url('/') }}/public/img/category/c1.jpg" alt="">
-									<a href="{{route('san-pham')}}">
+									<img class="img-fluid w-100" src="img/category/c1.jpg" alt="">
+									<a href="#">
 										<div class="deal-details">
 											<h6 class="deal-title">Laptop chơi game</h6>
 										</div>
@@ -119,8 +117,8 @@
 							<div class="col-lg-4 col-md-4">
 								<div class="single-deal">
 									<div class="overlay"></div>
-									<img class="img-fluid w-100" src="{{ url('/') }}/public/img/category/c2.jpg" alt="">
-									<a href="{{route('san-pham')}}">
+									<img class="img-fluid w-100" src="img/category/c2.jpg" alt="">
+									<a href="#">
 										<div class="deal-details">
 											<h6 class="deal-title">Laptop văn phòng</h6>
 										</div>
@@ -130,8 +128,8 @@
 							<div class="col-lg-4 col-md-4">
 								<div class="single-deal">
 									<div class="overlay"></div>
-									<img class="img-fluid w-100" src="{{ url('/') }}/public/img/category/c3.jpg" alt="">
-									<a href="{{route('san-pham')}}">
+									<img class="img-fluid w-100" src="img/category/c3.jpg" alt="">
+									<a href="#">
 										<div class="deal-details">
 											<h6 class="deal-title">Laptop mỏng nhẹ</h6>
 										</div>
@@ -141,8 +139,8 @@
 							<div class="col-lg-8 col-md-8">
 								<div class="single-deal">
 									<div class="overlay"></div>
-									<img class="img-fluid w-100" src="{{ url('/') }}/public/img/category/c4.jpg" alt="">
-									<a href="{{route('san-pham')}}">
+									<img class="img-fluid w-100" src="img/category/c4.jpg" alt="">
+									<a href="#">
 										<div class="deal-details">
 											<h6 class="deal-title">Laptop đồ họa</h6>
 										</div>
@@ -154,8 +152,8 @@
 					<div class="col-lg-4 col-md-6">
 						<div class="single-deal">
 							<div class="overlay"></div>
-							<img class="img-fluid w-100" src="{{ url('/') }}/public/img/category/c5.jpg" alt="">
-							<a href="{{route('san-pham')}}""img-pop-up" target="_blank">
+							<img class="img-fluid w-100" src="img/category/c5.jpg" alt="">
+							<a href="#""img-pop-up" target="_blank">
 								<div class="deal-details">
 									<h6 class="deal-title">Laptop doanh nhân</h6>
 								</div>
@@ -187,10 +185,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 								<div class="product-image">
-								<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt="">
+								<img class="img-fluid-product" src="img/product/macpro-1.jpg" alt="">
 								</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Pro 13 Touchbar</a>
+									<a href="#">Apple Macbook Pro 13 Touchbar</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -222,10 +220,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 									<div class="product-image">
-								<img class="img-fluid" src="{{ url('/') }}/public/img/product/macair-1.jpg" alt="">
+								<img class="img-fluid" src="img/product/macair-1.jpg" alt="">
 							</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Air 13</a>
+									<a href="#">Apple Macbook Air 13</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -256,10 +254,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 								<div class="product-image">
-								<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt="">
+								<img class="img-fluid-product" src="img/product/macpro-1.jpg" alt="">
 								</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Pro 13 Touchbar</a>
+									<a href="#">Apple Macbook Pro 13 Touchbar</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -291,10 +289,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 									<div class="product-image">
-								<img class="img-fluid" src="{{ url('/') }}/public/img/product/macair-1.jpg" alt="">
+								<img class="img-fluid" src="img/product/macair-1.jpg" alt="">
 							</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Air 13</a>
+									<a href="#">Apple Macbook Air 13</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -325,10 +323,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 								<div class="product-image">
-								<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt="">
+								<img class="img-fluid-product" src="img/product/macpro-1.jpg" alt="">
 								</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Pro 13 Touchbar</a>
+									<a href="#">Apple Macbook Pro 13 Touchbar</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -360,10 +358,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 									<div class="product-image">
-								<img class="img-fluid" src="{{ url('/') }}/public/img/product/macair-1.jpg" alt="">
+								<img class="img-fluid" src="img/product/macair-1.jpg" alt="">
 							</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Air 13</a>
+									<a href="#">Apple Macbook Air 13</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -394,10 +392,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 								<div class="product-image">
-								<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt="">
+								<img class="img-fluid-product" src="img/product/macpro-1.jpg" alt="">
 								</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Pro 13 Touchbar</a>
+									<a href="#">Apple Macbook Pro 13 Touchbar</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -429,10 +427,10 @@
 						<div class="col-lg-3 col-md-6">
 							<div class="single-product">
 									<div class="product-image">
-								<img class="img-fluid" src="{{ url('/') }}/public/img/product/macair-1.jpg" alt="">
+								<img class="img-fluid" src="img/product/macair-1.jpg" alt="">
 							</div>
 								<div class="product-details">
-									<a href="{{route('chi-tiet-laptop')}}">Apple Macbook Air 13</a>
+									<a href="#">Apple Macbook Air 13</a>
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
 										<h6 class="l-through">$210.00</h6>
@@ -480,10 +478,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 									<div class="product-image">
-									<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/dell-1.jpeg" alt="">
+									<img class="img-fluid-product" src="img/product/dell-1.jpeg" alt="">
 									</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell XPS 15 7590</a>
+										<a href="#">Laptop Dell XPS 15 7590</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -515,10 +513,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 										<div class="product-image">
-									<img class="img-fluid" src="{{ url('/') }}/public/img/product/dell-2.jpg" alt="">
+									<img class="img-fluid" src="img/product/dell-2.jpg" alt="">
 								</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell Vostro 3490</a>
+										<a href="#">Laptop Dell Vostro 3490</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -549,10 +547,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 									<div class="product-image">
-									<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/dell-1.jpeg" alt="">
+									<img class="img-fluid-product" src="img/product/dell-1.jpeg" alt="">
 									</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell XPS 15 7590</a>
+										<a href="#">Laptop Dell XPS 15 7590</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -584,10 +582,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 										<div class="product-image">
-									<img class="img-fluid" src="{{ url('/') }}/public/img/product/dell-2.jpg" alt="">
+									<img class="img-fluid" src="img/product/dell-2.jpg" alt="">
 								</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell Vostro 3490</a>
+										<a href="#">Laptop Dell Vostro 3490</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -618,10 +616,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 									<div class="product-image">
-									<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/dell-1.jpeg" alt="">
+									<img class="img-fluid-product" src="img/product/dell-1.jpeg" alt="">
 									</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell XPS 15 7590</a>
+										<a href="#">Laptop Dell XPS 15 7590</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -653,10 +651,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 										<div class="product-image">
-									<img class="img-fluid" src="{{ url('/') }}/public/img/product/dell-2.jpg" alt="">
+									<img class="img-fluid" src="img/product/dell-2.jpg" alt="">
 								</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell Vostro 3490</a>
+										<a href="#">Laptop Dell Vostro 3490</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -687,10 +685,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 									<div class="product-image">
-									<img class="img-fluid-product" src="{{ url('/') }}/public/img/product/dell-1.jpeg" alt="">
+									<img class="img-fluid-product" src="img/product/dell-1.jpeg" alt="">
 									</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell XPS 15 7590</a>
+										<a href="#">Laptop Dell XPS 15 7590</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -722,10 +720,10 @@
 							<div class="col-lg-3 col-md-6">
 								<div class="single-product">
 										<div class="product-image">
-									<img class="img-fluid" src="{{ url('/') }}/public/img/product/dell-2.jpg" alt="">
+									<img class="img-fluid" src="img/product/dell-2.jpg" alt="">
 								</div>
 									<div class="product-details">
-										<a href="{{route('chi-tiet-laptop')}}">Laptop Dell Vostro 3490</a>
+										<a href="#">Laptop Dell Vostro 3490</a>
 										<div class="price">
 											<h6>Giá: <strong>$150.00</strong></h6>
 											<h6 class="l-through">$210.00</h6>
@@ -795,7 +793,7 @@
 						<div class="active-exclusive-product-slider">
 							<!-- single exclusive carousel -->
 							<div class="single-exclusive-slider">
-								<img class="img-fluid" src="{{ url('/') }}/public/img/product/surface-1.png" alt="">
+								<img class="img-fluid" src="img/product/surface-1.png" alt="">
 								<div class="product-details">
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
@@ -810,7 +808,7 @@
 							</div>
 							<!-- single exclusive carousel -->
 							<div class="single-exclusive-slider">
-								<img class="img-fluid" src="{{ url('/') }}/public/img/product/surface-1.png" alt="">
+								<img class="img-fluid" src="img/product/surface-1.png" alt="">
 								<div class="product-details">
 									<div class="price">
 										<h6>Giá: <strong>$150.00</strong></h6>
@@ -835,19 +833,19 @@
 			<div class="container">
 				<div class="row">
 					<a class="col single-img" href="#">
-						<img class="img-fluid d-block mx-auto" src="{{ url('/') }}/public/img/brand/1.png" alt="">
+						<img class="img-fluid d-block mx-auto" src="img/brand/1.png" alt="">
 					</a>
 					<a class="col single-img" href="#">
-						<img class="img-fluid d-block mx-auto" src="{{ url('/') }}/public/img/brand/2.png" alt="">
+						<img class="img-fluid d-block mx-auto" src="img/brand/2.png" alt="">
 					</a>
 					<a class="col single-img" href="#">
-						<img class="img-fluid d-block mx-auto" src="{{ url('/') }}/public/img/brand/3.png" alt="">
+						<img class="img-fluid d-block mx-auto" src="img/brand/3.png" alt="">
 					</a>
 					<a class="col single-img" href="#">
-						<img class="img-fluid d-block mx-auto" src="{{ url('/') }}/public/img/brand/4.png" alt="">
+						<img class="img-fluid d-block mx-auto" src="img/brand/4.png" alt="">
 					</a>
 					<a class="col single-img" href="#">
-						<img class="img-fluid d-block mx-auto" src="{{ url('/') }}/public/img/brand/5.png" alt="">
+						<img class="img-fluid d-block mx-auto" src="img/brand/5.png" alt="">
 					</a>
 				</div>
 			</div>
@@ -871,7 +869,7 @@
 						<div class="row">
 							<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r1.jpg" alt=""></a>
+									<a href="#"><img src="img/r1.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -883,7 +881,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r2.jpg" alt=""></a>
+									<a href="#"><img src="img/r2.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -895,7 +893,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r3.jpg" alt=""></a>
+									<a href="#"><img src="img/r3.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -907,7 +905,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r5.jpg" alt=""></a>
+									<a href="#"><img src="img/r5.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -919,7 +917,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r6.jpg" alt=""></a>
+									<a href="#"><img src="img/r6.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -931,7 +929,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6 mb-20">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r7.jpg" alt=""></a>
+									<a href="#"><img src="img/r7.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -943,7 +941,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r9.jpg" alt=""></a>
+									<a href="#"><img src="img/r9.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -955,7 +953,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r10.jpg" alt=""></a>
+									<a href="#"><img src="img/r10.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -967,7 +965,7 @@
 							</div>
 							<div class="col-lg-4 col-md-4 col-sm-6">
 								<div class="single-related-product d-flex">
-									<a href="#"><img src="{{ url('/') }}/public/img/r11.jpg" alt=""></a>
+									<a href="#"><img src="img/r11.jpg" alt=""></a>
 									<div class="desc">
 										<a href="#" class="title">Black lace Heels</a>
 										<div class="price">
@@ -982,13 +980,11 @@
 					<div class="col-lg-3">
 						<div class="ctg-right">
 							<a href="#" target="_blank">
-								<img class="img-fluid d-block mx-auto" src="{{ url('/') }}/public/img/category/c5.jpg" alt="">
+								<img class="img-fluid d-block mx-auto" src="img/category/c5.jpg" alt="">
 							</a>
 						</div>
 					</div>
 				</div>
 			</div>
-		</section> --}}
-		<!-- End related-product Area -->
-	
+		</section>
 @stop()

@@ -5,7 +5,7 @@
 			<nav class="navbar navbar-expand-lg navbar-light main_box">
 				<div class="container">
 					<!-- Brand and toggle get grouped for better mobile display -->
-					<a class="navbar-brand logo_h" href="{{route('home')}}"><img src="{{ url('/') }}/public/img/logo.png" alt=""></a>
+					<a class="navbar-brand logo_h" href="#"><img src="img/logo.png" alt=""></a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
 					 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 						<span class="icon-bar"></span>
@@ -15,7 +15,7 @@
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
 						<ul class="nav navbar-nav menu_nav ml-auto">
-							<li class="nav-item active"><a class="nav-link" href="{{route('home')}}">Trang chủ</a></li>
+							<li class="nav-item active"><a class="nav-link" href="#">Trang chủ</a></li>
 							<!-- <li class="nav-item submenu dropdown">
 								<a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
 								 aria-expanded="false">Shop</a>
@@ -55,14 +55,14 @@
 									<li class="nav-item"><a class="nav-link" href="elements.html">Elements</a></li>
 								</ul>
 							</li> -->
-							<li class="nav-item"><a class="nav-link" href="{{route('san-pham')}}">Sản phẩm</a></li>
-							{{-- <li class="nav-item"><a class="nav-link" href="{{route('blog')}}">Blog</a></li> --}}
+							<li class="nav-item"><a class="nav-link" href="#">Sản phẩm</a></li>
+							{{-- <li class="nav-item"><a class="nav-link" href="#">Blog</a></li> --}}
 							<li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{route('lien-he')}}">Liên hệ</a></li>
-							<li class="nav-item"><a class="nav-link" href="{{route('dang-nhap')}}">Đăng nhập</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Liên hệ</a></li>
+							<li class="nav-item"><a class="nav-link" href="#">Đăng nhập</a></li>
 						</ul>
 						<ul class="nav navbar-nav navbar-right">
-							<li class="nav-item"><a href="{{route('gio-hang')}}" class="cart"><span class="ti-bag"></span></a></li>
+							<li class="nav-item"><a href="#" class="cart"><span class="ti-bag"></span></a></li>
 							<li class="nav-item">
 								<button class="search"><span class="lnr lnr-magnifier" id="search"></span></button>
 							</li>

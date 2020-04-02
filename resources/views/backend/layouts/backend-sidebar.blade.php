@@ -3,18 +3,18 @@
     <!-- START X-NAVIGATION -->
     <ul class="x-navigation">
         <li class="xn-logo">
-            <a href="{{route('home-admin')}}">
+            <a href="#">
                 
             </a>
             <a href="#" class="x-navigation-control"></a>
         </li>
         <li class="xn-profile">
             <a href="#" class="profile-mini">
-                <img src="{{ url('/') }}/public/admin/assets/images/users/avatar.jpg" alt="John Doe"/>
+                <img src="admin/assets/images/users/avatar.jpg" alt="John Doe"/>
             </a>
             <div class="profile">
                 <div class="profile-image">
-                    <img src="{{ url('/') }}/public/admin/assets/images/users/avatar.jpg" alt="John Doe"/>
+                    <img src="admin/assets/images/users/avatar.jpg" alt="John Doe"/>
                 </div>
                 <div class="profile-data">
                     <div class="profile-data-name">Admin</div>
@@ -25,7 +25,7 @@
         </li>
         {{-- <li class="xn-title">Navigation</li> --}}
         <li class="active">
-            <a href="{{route('home-admin')}}"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
+            <a href="#"><span class="fa fa-desktop"></span> <span class="xn-text">Dashboard</span></a>                        
         </li>                    
         {{-- <li class="xn-title">Components</li> --}}
         {{-- <li class="xn-openable">
@@ -50,32 +50,32 @@
         <li class="xn-openable">
             <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Danh mục</span></a>
             <ul>                            
-                <li><a href="{{route('home-category')}}"><span class="fa fa-align-justify"></span> Danh sách danh mục</a></li>
-                <li><a href="{{route('create-category')}}"><span class="fa fa-plus"></span> Thêm danh mục</a></li>
+                <li><a href="{{ route('admin.get.list.category')}}"><span class="fa fa-align-justify"></span> Danh sách danh mục</a></li>
+                <li><a href="{{ route('admin.get.create.category')}}"><span class="fa fa-plus"></span> Thêm danh mục</a></li>
                 {{-- <li><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>                             --}}
             </ul>
         </li>
         <li class="xn-openable">
             <a href="#"><span class="fa fa-laptop"></span> <span class="xn-text">Sản phẩm</span></a>
             <ul>                            
-                <li><a href="{{route('product-home')}}"><span class="fa fa-align-justify"></span> Danh sách sản phẩm</a></li>
-                <li><a href="{{route('product-create')}}"><span class="fa fa-plus"></span> Thêm sản phẩm</a></li>
+                <li><a href="#"><span class="fa fa-align-justify"></span> Danh sách sản phẩm</a></li>
+                <li><a href="#"><span class="fa fa-plus"></span> Thêm sản phẩm</a></li>
                 {{-- <li><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>                             --}}
             </ul>
         </li>
         <li class="xn-openable">
             <a href="#"><span class="fa fa-shopping-cart"></span> <span class="xn-text">Đơn hàng</span></a>
             <ul>                            
-                <li><a href="{{route('order-notapprove')}}"><span class="fa fa-times"></span> Đơn hàng chưa duyệt</a></li>
-                <li><a href="{{route('order-approve')}}"><span class="fa fa-check"></span> Đơn hàng đã duyệt</a></li>
+                <li><a href="#"><span class="fa fa-times"></span> Đơn hàng chưa duyệt</a></li>
+                <li><a href="#"><span class="fa fa-check"></span> Đơn hàng đã duyệt</a></li>
                 {{-- <li><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>                             --}}
             </ul>
         </li>
         <li class="xn-openable">
             <a href="#"><span class="fa fa-users"></span> <span class="xn-text">Tài khoản</span></a>
             <ul>                            
-                <li><a href="{{route('customer-home')}}"><span class="fa fa-users"></span> Khách hàng</a></li>
-                <li><a href="{{route('employee-home')}}"><span class="fa fa-user"></span> Nhân viên</a></li>
+                <li><a href="#"><span class="fa fa-users"></span> Khách hàng</a></li>
+                <li><a href="#"><span class="fa fa-user"></span> Nhân viên</a></li>
                 {{-- <li><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>                             --}}
             </ul>
         </li>

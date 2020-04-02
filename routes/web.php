@@ -1,33 +1,25 @@
 <?php
-
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|,'middleware'=> 'auth'
-*/
-//group chứa nhiều file có tiền tố backend
-////'namespace'=>'Backend' thay thế đường dẫn trong 'uses' => 'HomeController@index', ở home.php
-///
+Route::get('/', 'FrontendController@index')->name('admin.fontend');
 Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
-	require_once 'backend/home.php';
-	require_once 'backend/category.php';
-	require_once 'backend/role.php';
-	require_once 'backend/product.php';
-	require_once 'backend/user.php';
-	// require_once 'backend/unit.php';
-	// require_once 'backend/import.php';
-	require_once 'backend/order.php';
-	// require_once 'backend/orderdetail.php';
-	// require_once 'backend/customer.php';
-	// require_once 'backend/nation.php';
-
+	Route::get('/', 'AdminController@index')->name('admin.home');
+     // category
+     Route::group(['prefix'=>'category'],function(){
+     Route::get('/','AdminCategoryController@index')->name('admin.get.list.category');
+     Route::get('/create','AdminCategoryController@create')->name('admin.get.create.category');
+     Route::post('/create','AdminCategoryController@store')->name('post.store');
+     Route::get('/update/{id}','AdminCategoryController@edit')->name('admin.get.edit.category');
+     Route::post('/update/{id}','AdminCategoryController@update')->name('post.update');
+     Route::get('/{action}/{id}','AdminCategoryController@action')->name('admin.get.action.category');
+});
+    //product
+    Route::group(['prefix'=>'product'],function(){
+        Route::get('/','AdminProductController@index')->name('admin.get.list.product');
+        Route::get('/create','AdminProductController@create')->name('admin.get.create.product');
+        Route::post('/create','AdminProductController@store')->name('admin.post.create.product');
+        Route::get('/update/{id}','AdminProductController@edit')->name('admin.get.edit.product');
+        Route::post('/update/{id}','AdminProductController@update')->name('admin.post.update.product');
+        Route::get('/{action}/{id}','AdminProductController@action')->name('admin.get.action.product');
+   });
 
 });
-require_once 'login.php';
-require_once 'frontend.php';
 ?>

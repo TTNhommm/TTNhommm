@@ -10,11 +10,11 @@
 <div class="page-content-wrap">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" method="post" action="{{ route('post.store') }}">
+            <form class="form-horizontal" method="post" action="{{ route('post.update',$category->id) }}">
             @csrf
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Thêm  danh mục</strong></h3>
+                        <h3 class="panel-title"><strong>Sửa danh mục</strong></h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -24,23 +24,13 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="text" class="form-control" name="name" />
+                                            <input type="text" class="form-control" name="name" value="{{ old('name',isset($category->name) ? $category->name : '') }}" />
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Ngày thêm</label>
-                                    <div class="col-md-9">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                            <input type="text" class="form-control datepicker" value="2015-11-01">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
+                        <br>
                         <div class="row">
                             <div class="col-md-offset-2 col-md-6">
                                 <div class="form-group form-check">
@@ -59,5 +49,4 @@
         </div>
     </div>
 </div>
-<!-- END PAGE CONTENT WRAPPER -->
 @stop
