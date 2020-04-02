@@ -44,6 +44,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-3 control-label">Loại</label>
+                                    <div class="col-md-9">
+                                        <select class="form-control select">
+                                            <option>Laptop chơi game</option>
+                                            <option>Laptop đồ họa</option>
+                                            <option>Laptop văn phòng</option>
+                                            <option>Laptop mỏng nhẹ</option>
+                                            <option>Laptop doanh nhân</option>
+                                        </select>
+
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label">Tên sản phẩm</label>
                                     <div class="col-md-9">
                                         <div class="input-group">
