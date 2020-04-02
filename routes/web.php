@@ -1,5 +1,5 @@
 <?php
-Route::get('/', 'FrontendController@index')->name('admin.fontend');
+Route::get('/', 'FrontendController@index')->name('admin.frontend');
 Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
 	Route::get('/', 'AdminController@index')->name('admin.home');
      // category
