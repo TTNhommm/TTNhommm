@@ -42,6 +42,7 @@
                                     <th width="100">amount</th> --}}
                                     <th class="text-center">Mô tả</th>
                                     <th width="200" class="text-center">Hình ảnh</th>
+                                    <th width="200" class="text-center">Loại</th>
                                     <th width="120" class="text-center">Danh mục</th>
                                     <th width="120" class="text-center">Trạng thái</th>
                                     <th width="120" class="text-center">Ngày nhập</th>
@@ -60,6 +61,7 @@
                                         thời điểm hiện tại.</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
                                             src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt=""></td>
+                                    <td class="text-center">Laptop đồ họa</td>
                                     <td class="text-center">Apple</td>
                                     <td class="text-center"> <label class="switch switch-small">
                                             <input type="checkbox" checked value="0" />
@@ -84,6 +86,7 @@
                                         thời điểm hiện tại.</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
                                             src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt=""></td>
+                                    <td class="text-center">Laptop đồ họa</td>
                                     <td class="text-center">Apple</td>
                                     <td class="text-center"> <label class="switch switch-small">
                                             <input type="checkbox" checked value="0" />
@@ -108,6 +111,7 @@
                                         thời điểm hiện tại.</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
                                             src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt=""></td>
+                                    <td class="text-center">Laptop đồ họa</td>
                                     <td class="text-center">Apple</td>
                                     <td class="text-center"> <label class="switch switch-small">
                                             <input type="checkbox" checked value="0" />
