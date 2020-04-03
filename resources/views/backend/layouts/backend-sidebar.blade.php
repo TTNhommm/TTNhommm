@@ -3,7 +3,7 @@
     <!-- START X-NAVIGATION -->
     <ul class="x-navigation">
         <li class="xn-logo">
-            <a href="#">
+            <a href="{{route("admin.home")}}">
                 
             </a>
             <a href="#" class="x-navigation-control"></a>
@@ -58,8 +58,8 @@
         <li class="xn-openable">
             <a href="#"><span class="fa fa-laptop"></span> <span class="xn-text">Sản phẩm</span></a>
             <ul>                            
-                <li><a href="#"><span class="fa fa-align-justify"></span> Danh sách sản phẩm</a></li>
-                <li><a href="#"><span class="fa fa-plus"></span> Thêm sản phẩm</a></li>
+                <li><a href="{{ route('admin.get.list.product')}}"><span class="fa fa-align-justify"></span> Danh sách sản phẩm</a></li>
+                <li><a href="{{route('admin.get.create.product')}}"><span class="fa fa-plus"></span> Thêm sản phẩm</a></li>
                 {{-- <li><a href="table-export.html"><span class="fa fa-download"></span> Export Tables</a></li>                             --}}
             </ul>
         </li>
