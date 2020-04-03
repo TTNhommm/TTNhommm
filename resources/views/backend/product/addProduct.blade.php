@@ -18,27 +18,21 @@
             <form class="form-horizontal">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Thêm</strong> Danh mục</h3>
+                        <h3 class="panel-title"><strong>Thêm</strong> sản phẩm</h3>
                        
                     </div>
                   
                     <div class="panel-body">
-
+                        @if(isset($products))
+                        @foreach($products as $product )
                         <div class="row">
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Danh mục</label>
+                                    <label class="col-md-3 control-label">Sản phẩm</label>
                                     <div class="col-md-9">
                                         <select class="form-control select">
                                             <option>Apple</option>
-                                            <option>Dell</option>
-                                            <option>Asus</option>
-                                            <option>Msi</option>
-                                            <option>Microsoft Surface</option>
-                                            <option>Msi</option>
-                                            <option>Hp</option>
-                                            <option>Acer</option>
                                         </select>
 
                                     </div>
@@ -187,7 +181,7 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Pin và sạc</label>
+                                    <label class="col-md-3 control-label">Pin</label>
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
@@ -201,7 +195,8 @@
                             </div>
 
                         </div>
-
+                        @endforeach
+                        @endif
                     </div>
                     <div class="panel-footer">
                         <button class="btn btn-default">Xóa trường</button>
