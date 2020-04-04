@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<base href="{{ asset('public')}}/">
+<base href="{{ asset('/')}}">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -111,7 +111,7 @@
     <script src="admin/js/plugins/rickshaw/rickshaw.min.js"></script>
     <script src='admin/js/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js'></script>
     <script src='admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
-    <script src='{{ url('/') }}/public/admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
+    <script src='admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
     <script src="admin/js/plugins/owl/owl.carousel.min.js"></script>
     <script src="admin/js/plugins/moment.min.js"></script>
     <script src="admin/js/plugins/daterangepicker/daterangepicker.js"></script>
@@ -168,7 +168,24 @@
     </noscript>
     <!-- END YANDEX -->
     <!-- END COUNTERS // NOT INCLUDED IN TEMPLATE -->
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
 
+                reader.onload = function (e) {
+                    $('#img_upload').attr('src', e.target.result);
+                }
+
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+
+        $("#filename").change(function () {
+            readURL(this);
+        });
+
+    </script>
 </body>
 
 </html>
