@@ -81,7 +81,7 @@
                                         {{-- <button class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
                                                 class="fa fa-info"></span></button>
                                         <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button> --}}
+                                         onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button> --}}
                                         <a href="{{ route('admin.get.edit.product',$product->id) }}">
                                             <button class="btn btn-primary btn-rounded btn-condensed btn-sm">
                                                 <span class="fa fa-pencil"></span></button>

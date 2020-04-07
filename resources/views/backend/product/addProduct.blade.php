@@ -25,7 +25,7 @@
                                     <label class="col-md-3 control-label">Sản phẩm</label>
                                     <div class="col-md-9">
                                         <select class="form-control select">
-                                            <option>Apple</option>
+                                            <option value=""></option>
                                         </select>
                                     </div>
                                 </div>
