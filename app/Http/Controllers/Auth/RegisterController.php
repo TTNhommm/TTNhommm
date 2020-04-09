@@ -30,7 +30,7 @@ class RegisterController extends Controller
     { 
         $message ="Bạn không đủ thẩm quyền";
         $user = Auth::user();
-        if($user->level > 1)
+        if($user && $user->level > 1)
         {
             dd($message);
         }
@@ -39,8 +39,17 @@ class RegisterController extends Controller
         }
     }
     public function create()
-    {
-        return view('backend.user.userEmployeeCreate');
+    {   
+        $user = Auth::user();
+        if(!$user)
+        {
+            // return view('backend.login');
+            return redirect()->route('admin.get.login');
+        }
+        else{
+            return view('backend.user.userEmployeeCreate');
+        }
+        
     }
     public function store(Request $req)
     {
