@@ -11,39 +11,36 @@
 
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap">
+
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" method="POST" action="{{route('admin.post.create.product')}}">
+
+            <form class="form-horizontal">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Thêm</strong> sản phẩm</h3>   
+                        <h3 class="panel-title"><strong>Thêm</strong> Danh mục</h3>
+                       
                     </div>
+                  
                     <div class="panel-body">
+
                         <div class="row">
+
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Danh mục</label>
                                     <div class="col-md-9">
-                                        <?php $categories=DB::Table('categories')->get() ?>
-                                        <select class="form-control select" id="">
-                                            <option value="">Chọn thương hiệu</option>
-                                            @foreach($categories as $category )
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
-                                        </select>
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Loại</label>
-                                    <div class="col-md-9">
                                         <select class="form-control select">
-                                            <option>Chọn loại laptop</option>
-                                            <option>Laptop chơi game</option>
-                                            <option>Laptop đồ họa</option>
-                                            <option>Laptop văn phòng</option>
-                                            <option>Laptop mỏng nhẹ</option>
-                                            <option>Laptop doanh nhân</option>
+                                            <option>Apple</option>
+                                            <option>Dell</option>
+                                            <option>Asus</option>
+                                            <option>Msi</option>
+                                            <option>Microsoft Surface</option>
+                                            <option>Msi</option>
+                                            <option>Hp</option>
+                                            <option>Acer</option>
                                         </select>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -51,8 +48,9 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="text" class="form-control" name="name"/>
+                                            <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -62,14 +60,29 @@
                                             <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
+                                {{-- 
+                                <div class="form-group">
+                                    <label class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9 col-xs-12">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span
+                                                    class="fa fa-unlock-alt"></span></span>
+                                            <input type="password" class="form-control" />
+                                        </div>
+                                        <span class="help-block">Password field sample</span>
+                                    </div>
+                                </div> --}}
+
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Mô tả</label>
                                     <div class="col-md-9 col-xs-12">
                                         <textarea class="form-control" rows="5"></textarea>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Hình ảnh</label>
                                     <div class="col-md-9">
@@ -77,11 +90,7 @@
                                             title="Chọn hình ảnh" />
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <div class="col-md-offset-3 col-md-9">
-                                        <img id="img_upload" class="img img-responsive" src="" alt="">
-                                    </div>
-                                </div>
+
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
@@ -91,6 +100,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -100,6 +110,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -109,6 +120,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -118,6 +130,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -127,6 +140,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -136,6 +150,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -145,6 +160,7 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -154,28 +170,36 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Pin</label>
+                                    <label class="col-md-3 control-label">Pin và sạc</label>
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" />
                                         </div>
+                                        {{-- <span class="help-block">This is sample of text field</span> --}}
                                     </div>
                                 </div>
+
+
                             </div>
+
                         </div>
+
                     </div>
                     <div class="panel-footer">
-                        <button class="btn btn-default">Xóa trường</button>
-                        <button type="submit" class="btn btn-primary pull-right">Thêm</button>
+                        <!-- <button class="btn btn-default">Xóa trường</button> -->
+                        <button class="btn btn-primary pull-right">Cập nhật</button>
                     </div>
                 </div>
             </form>
+
         </div>
     </div>
+
 </div>
 <!-- END PAGE CONTENT WRAPPER -->
 @stop

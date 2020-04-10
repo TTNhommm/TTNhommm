@@ -16,7 +16,7 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="page-head-text">
-                        <h3 class="panel-title"><strong>Quản lý danh mục</strong></h3>
+                        <h3 class="panel-title"><strong>Quản lý </strong>danh mục</h3>
                         <a href="{{ route('admin.get.create.category')}}">
                             <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-plus"></span> Thêm danh mục</button>
                         </a>
@@ -29,7 +29,7 @@
                                 <tr>
                                     <th width="50" class="text-center">ID</th>
                                     <th>Tên nhà cung cấp</th>
-                                    <th width="150">Nổi bật</th>
+                                    <th width="150" class="text-center">Nổi bật</th>
                                     <th width="200" class="text-center">Ngày nhập</th>
                                     <th width="120" class="text-center">Hành động</th>
                                 </tr>
@@ -40,7 +40,7 @@
                                     <tr>
                                         <td class="text-center">{{ $category->id }}</td>
                                         <td><strong>{{ $category->name }}</strong></td>
-                                        <td>{{ $category->cate_status }}</td>
+                                        <td class="text-center">{{ $category->cate_status }}</td>
                                         <td class="text-center">{{ $category->created_at }}</td>
                                         <td class="text-center">
                                             

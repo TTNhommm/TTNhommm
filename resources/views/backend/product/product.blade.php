@@ -24,8 +24,9 @@
                 <div class="panel-heading">
                     <div class="page-head-text">
                         <h1 class="panel-title"><strong>Quản lý</strong> sản phẩm</h1>
-                        <a href="{{ route('product-create')}}">
-                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-plus"></span> Thêm sản phẩm</button>
+                        <a href="{{ route('admin.get.create.product')}}">
+                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-plus"></span> Thêm
+                                sản phẩm</button>
                         </a>
                     </div>
                 </div>
@@ -43,6 +44,7 @@
                                     <th class="text-center">Mô tả</th>
                                     <th width="200" class="text-center">Hình ảnh</th>
                                     <th width="200" class="text-center">Loại</th>
+                                    <th width="120" class="text-center">Giá</th>
                                     <th width="120" class="text-center">Danh mục</th>
                                     <th width="120" class="text-center">Trạng thái</th>
                                     <th width="120" class="text-center">Ngày nhập</th>
@@ -50,81 +52,48 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr id="trow_1">
-                                    <td class="text-center">1</td>
-                                    <td><strong>Apple Macbook Pro 2020</strong></td>
+                                @if(isset($products))
+                                @foreach($products as $product )
+                                {{-- <tr id="trow_1"> --}}
+                                <tr>
+                                    <td class="text-center">{{ $product->id }}</td>
+                                    <td><strong>{{ $product->name }}</strong></td>
                                     {{-- <td><span class="label label-success">New</span></td>
-                                    <td>$430.20</td> --}}
-                                    <td class="text-center">MacBook Pro 13 hứa hẹn sẽ được trang bị bàn phím mới như
-                                        phiên bản 16 inch, bên cạnh đó còn có những tính năng gì khác? Dưới đây là tổng
-                                        hợp những thông tin, dự đoán cũng như tin đồn về dòng MacBook Pro 2020 cho đến
-                                        thời điểm hiện tại.</td>
+                                        <td>$430.20</td> --}}
+                                    <td class="text-center" style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
+                                        hidden; -webkit-box-orient: vertical;">{{$product->description}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
-                                            src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt=""></td>
+                                            src="{{asset("public/img/product/$product->image")}}" alt=""></td>
                                     <td class="text-center">Laptop đồ họa</td>
-                                    <td class="text-center">Apple</td>
+                                    <td class="text-center">25.000.000</td>
+                                    <?php
+                                        $category=DB::table('categories')->where('id',$product->id)->first();
+                                    ?>
+                                    <td class="text-center">
+                                        {{$category->name}}
+                                    </td>
                                     <td class="text-center"> <label class="switch switch-small">
                                             <input type="checkbox" checked value="0" />
                                             <span></span>
                                         </label></td>
-                                    <td class="text-center">23/09/2015</td>
+                                    <td class="text-center">{{$product->created_at}}</td>
                                     <td class="text-center">
-                                        <button class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
+                                        {{-- <button class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
                                                 class="fa fa-info"></span></button>
                                         <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
+                                            onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button> --}}
+                                        <a href="{{ route('admin.get.edit.product',$product->id) }}">
+                                            <button class="btn btn-primary btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-pencil"></span></button>
+                                        </a>
+                                        <a href="{{ route('admin.get.action.product',['delete',$product->id]) }}">
+                                            <button class="btn btn-danger btn-rounded btn-condensed btn-sm"><span
+                                                    class="fa fa-times"></span></button>
+                                        </a>
                                     </td>
                                 </tr>
-                                <tr id="trow_2">
-                                    <td class="text-center">1</td>
-                                    <td><strong>Apple Macbook Pro 2020</strong></td>
-                                    {{-- <td><span class="label label-success">New</span></td>
-                                    <td>$430.20</td> --}}
-                                    <td class="text-center">MacBook Pro 13 hứa hẹn sẽ được trang bị bàn phím mới như
-                                        phiên bản 16 inch, bên cạnh đó còn có những tính năng gì khác? Dưới đây là tổng
-                                        hợp những thông tin, dự đoán cũng như tin đồn về dòng MacBook Pro 2020 cho đến
-                                        thời điểm hiện tại.</td>
-                                    <td class="text-center"><img class="img-fluid" style="width:100px"
-                                            src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt=""></td>
-                                    <td class="text-center">Laptop đồ họa</td>
-                                    <td class="text-center">Apple</td>
-                                    <td class="text-center"> <label class="switch switch-small">
-                                            <input type="checkbox" checked value="0" />
-                                            <span></span>
-                                        </label></td>
-                                    <td class="text-center">23/09/2015</td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
-                                                class="fa fa-info"></span></button>
-                                        <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_2');"><span class="fa fa-times"></span></button>
-                                    </td>
-                                </tr>
-                                <tr id="trow_3">
-                                    <td class="text-center">1</td>
-                                    <td><strong>Apple Macbook Pro 2020</strong></td>
-                                    {{-- <td><span class="label label-success">New</span></td>
-                                    <td>$430.20</td> --}}
-                                    <td class="text-center">MacBook Pro 13 hứa hẹn sẽ được trang bị bàn phím mới như
-                                        phiên bản 16 inch, bên cạnh đó còn có những tính năng gì khác? Dưới đây là tổng
-                                        hợp những thông tin, dự đoán cũng như tin đồn về dòng MacBook Pro 2020 cho đến
-                                        thời điểm hiện tại.</td>
-                                    <td class="text-center"><img class="img-fluid" style="width:100px"
-                                            src="{{ url('/') }}/public/img/product/macpro-1.jpg" alt=""></td>
-                                    <td class="text-center">Laptop đồ họa</td>
-                                    <td class="text-center">Apple</td>
-                                    <td class="text-center"> <label class="switch switch-small">
-                                            <input type="checkbox" checked value="0" />
-                                            <span></span>
-                                        </label></td>
-                                    <td class="text-center">23/09/2015</td>
-                                    <td class="text-center">
-                                        <button class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
-                                                class="fa fa-info"></span></button>
-                                        <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_3');"><span class="fa fa-times"></span></button>
-                                    </td>
-                                </tr>
+                                @endforeach
+                                @endif
                             </tbody>
                         </table>
                     </div>

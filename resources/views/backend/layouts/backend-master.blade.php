@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<base href="{{ asset('/') }}">
+<base href="{{ asset('public')}}/">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -96,9 +96,11 @@
     <script src="admin/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
     <!-- END PLUGINS -->
 
+
+
     <!-- START THIS PAGE PLUGINS-->
     <script src="https://www.google-analytics.com/analytics.js"></script>
-    <script src='admin/js/plugins/icheck/icheck.min.js'></script>
+    <script src="admin/js/plugins/icheck/icheck.min.js"></script>
     <script src="admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script src="admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="admin/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
@@ -111,7 +113,6 @@
     <script src='admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
     <script src='admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
     <script src="admin/js/plugins/owl/owl.carousel.min.js"></script>
-
     <script src="admin/js/plugins/moment.min.js"></script>
     <script src="admin/js/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- END THIS PAGE PLUGINS-->
@@ -167,7 +168,21 @@
     </noscript>
     <!-- END YANDEX -->
     <!-- END COUNTERS // NOT INCLUDED IN TEMPLATE -->
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#img_upload').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#filename").change(function () {
+            readURL(this);
+        });
 
+    </script>
 </body>
 
 </html>
