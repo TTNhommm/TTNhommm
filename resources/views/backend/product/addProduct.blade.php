@@ -13,7 +13,7 @@
 <div class="page-content-wrap">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="POST" action="{{route('admin.post.create.product')}}">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><strong>Thêm</strong> sản phẩm</h3>   
@@ -22,10 +22,14 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label class="col-md-3 control-label">Sản phẩm</label>
+                                    <label class="col-md-3 control-label">Danh mục</label>
                                     <div class="col-md-9">
-                                        <select class="form-control select">
-                                            <option value=""></option>
+                                        <?php $categories=DB::Table('categories')->get() ?>
+                                        <select class="form-control select" id="">
+                                            <option value="">Chọn thương hiệu</option>
+                                            @foreach($categories as $category )
+                                            <option value="{{$category->id}}">{{$category->name}}</option>
+                                            @endforeach
                                         </select>
                                     </div>
                                 </div>
@@ -33,6 +37,7 @@
                                     <label class="col-md-3 control-label">Loại</label>
                                     <div class="col-md-9">
                                         <select class="form-control select">
+                                            <option>Chọn loại laptop</option>
                                             <option>Laptop chơi game</option>
                                             <option>Laptop đồ họa</option>
                                             <option>Laptop văn phòng</option>
@@ -46,7 +51,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="name"/>
                                         </div>
                                     </div>
                                 </div>
@@ -165,7 +170,7 @@
                     </div>
                     <div class="panel-footer">
                         <button class="btn btn-default">Xóa trường</button>
-                        <button class="btn btn-primary pull-right">Thêm</button>
+                        <button type="submit" class="btn btn-primary pull-right">Thêm</button>
                     </div>
                 </div>
             </form>

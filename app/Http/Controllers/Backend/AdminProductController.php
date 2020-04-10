@@ -25,6 +25,15 @@ class AdminProductController extends Controller
     }
     public function create()
     {
+        $categories = Category::all();
         return view('backend.product.addProduct');
+    }
+    public function store(Request $req)
+    {
+        $products = new Product();
+        $products->name = $req->name;
+        $products->cate_slug = Str::slug($req->name,'-');
+        $products->save();
+        return redirect()->back();
     }
 }
