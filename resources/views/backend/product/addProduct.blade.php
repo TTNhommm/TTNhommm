@@ -34,10 +34,11 @@
                                         </select>
                                     </div>
                                 </div>
+
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Loại</label>
                                     <div class="col-md-9">
-                                        <select class="form-control select">
+                                        <select class="form-control select" name="pro_type">
                                             <option>Chọn loại laptop</option>
                                             <option>Laptop chơi game</option>
                                             <option>Laptop đồ họa</option>
@@ -61,20 +62,20 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="pro_price" />
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Mô tả</label>
                                     <div class="col-md-9 col-xs-12">
-                                        <textarea class="form-control" rows="5"></textarea>
+                                        <textarea class="form-control" rows="5" name="pro_content"></textarea>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Hình ảnh</label>
                                     <div class="col-md-9">
-                                        <input type="file" class="fileinput btn-primary" name="filename" id="filename"
+                                        <input type="file" class="fileinput btn-primary" name="pro_image" id="filename"
                                             title="Chọn hình ảnh" />
                                     </div>
                                 </div>

@@ -5,8 +5,8 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>        
         <!-- META SECTION -->
-        <base href="{{ asset('/')}}">
-        <title>Atlant - Responsive Bootstrap Admin Template</title>            
+        <base href="{{ asset('public')}}/">
+        <title>Electro Admin</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />

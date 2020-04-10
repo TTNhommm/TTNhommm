@@ -30,16 +30,24 @@ class AdminProductController extends Controller
     }
     public function store(Request $req)
     {
-        $products = new Product();
-        $products->pro_name = $req->pro_name;
-        $products->pro_slug = Str::slug($req->name,'-');
-        if($req->pro_status)
+        $product= new Product();
+        $product->pro_name = $req->pro_name;
+        $product->pro_type = $req->pro_type;
+        $product->pro_slug =Str::slug($req->pro_name,'-');
+        $product->pro_content= $req->pro_content;
+        // $product->pro_sale  =$req->pro_sale;
+        $product->pro_price  = $req->pro_price;
+        $product->pro_cate_id = $req->pro_cate_id;
+        if($req->hasFile('pro_image'))
         {
-            $categories->pro_status = 1;
-        }else {
-            $categories->pro_status = 0;
+            $file = $req->file('pro_image');
+            $filename = time().$file->getclientoriginalName();
+            $file->move('img/product',$filename);
+            $product->pro_image = $filename;
         }
-        $products->save();
-        return redirect()->back();
+        dd($product);
+        
+        // $product->save();
+        // return redirect()->back();
     }
 }
