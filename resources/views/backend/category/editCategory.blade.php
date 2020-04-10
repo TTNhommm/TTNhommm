@@ -10,7 +10,7 @@
 <div class="page-content-wrap">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" method="post" action="{{ route('post.update',$category->id) }}">
+            <form class="form-horizontal" method="post" action="{{ route('admin.post.update.category',$category->id) }}">
             @csrf
                 <div class="panel panel-default">
                     <div class="panel-heading">

@@ -10,7 +10,7 @@
 <div class="page-content-wrap">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" method="post" action="{{ route('post.store') }}">
+            <form class="form-horizontal" method="post" action="{{ route('admin.post.post.product') }}">
                 @csrf
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -35,14 +35,6 @@
                                 </label>
                             </div>
                         </div>
-                        {{-- <div class="row">
-                            <div class="col-md-offset-2 col-md-6">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" name="cate_status" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Nổi bật</label>
-                                </div>
-                            </div>
-                        </div> --}}
                     </div>
                     <div class="panel-footer">
                         <!-- <button class="btn btn-default">Xóa trường</button> -->

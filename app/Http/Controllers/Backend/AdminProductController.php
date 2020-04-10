@@ -31,8 +31,14 @@ class AdminProductController extends Controller
     public function store(Request $req)
     {
         $products = new Product();
-        $products->name = $req->name;
-        $products->cate_slug = Str::slug($req->name,'-');
+        $products->pro_name = $req->pro_name;
+        $products->pro_slug = Str::slug($req->name,'-');
+        if($req->pro_status)
+        {
+            $categories->pro_status = 1;
+        }else {
+            $categories->pro_status = 0;
+        }
         $products->save();
         return redirect()->back();
     }
