@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<base href="{{ asset('/')}}">
+    <base href="{{ asset('public')}}/">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
