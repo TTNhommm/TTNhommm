@@ -6,9 +6,9 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
      Route::group(['prefix'=>'category'],function(){
      Route::get('/','AdminCategoryController@index')->name('admin.get.list.category');
      Route::get('/create','AdminCategoryController@create')->name('admin.get.create.category');
-     Route::post('/create','AdminCategoryController@store')->name('post.store');
+     Route::post('/create','AdminCategoryController@store')->name('admin.post.post.product');
      Route::get('/update/{id}','AdminCategoryController@edit')->name('admin.get.edit.category');
-     Route::post('/update/{id}','AdminCategoryController@update')->name('post.update');
+     Route::post('/update/{id}','AdminCategoryController@update')->name('admin.post.update.category');
      Route::get('/{action}/{id}','AdminCategoryController@action')->name('admin.get.action.category');
 });
     //product

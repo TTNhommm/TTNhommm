@@ -14,6 +14,7 @@
     <div class="row">
         <div class="col-md-12">
             <form class="form-horizontal" method="POST" action="{{route('admin.post.create.product')}}">
+                @csrf
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title"><strong>Thêm</strong> sản phẩm</h3>   
@@ -51,7 +52,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
-                                            <input type="text" class="form-control" name="name"/>
+                                            <input type="text" class="form-control" name="pro_name"/>
                                         </div>
                                     </div>
                                 </div>

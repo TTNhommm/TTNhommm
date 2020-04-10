@@ -57,13 +57,13 @@
                                 {{-- <tr id="trow_1"> --}}
                                 <tr>
                                     <td class="text-center">{{ $product->id }}</td>
-                                    <td><strong>{{ $product->name }}</strong></td>
+                                    <td><strong>{{ $product->pro_name}}</strong></td>
                                     {{-- <td><span class="label label-success">New</span></td>
                                         <td>$430.20</td> --}}
                                     <td class="text-center" style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
                                         hidden; -webkit-box-orient: vertical;">{{$product->description}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
-                                            src="{{asset("public/img/product/$product->image")}}" alt=""></td>
+                                            src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
                                     <td class="text-center">Laptop đồ họa</td>
                                     <td class="text-center">25.000.000</td>
                                     <?php
