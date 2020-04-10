@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -18,23 +21,22 @@ class LoginController extends Controller
     | to conveniently provide its functionality to your applications.
     |
     */
-
     use AuthenticatesUsers;
-
-    /**
-     * Where to redirect users after login.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
+    public function getlogin()
     {
-        $this->middleware('guest')->except('logout');
+        return view('backend.login');
+    }
+
+    public function postlogin(Request $request)
+    {
+        $credentials = $request->only('name', 'password');
+
+        if (\Auth::attempt($credentials)) {
+            return redirect()->route('admin.home');
+        }
+    }public function logout()
+    { 
+        \Auth::logout();
+        return redirect()->route('admin.home');
     }
 }

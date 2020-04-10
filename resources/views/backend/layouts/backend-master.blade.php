@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<base href="{{ asset('public')}}/">
+<base href="{{ asset('/')}}">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -71,7 +71,7 @@
                 </div>
                 <div class="mb-footer">
                     <div class="pull-right">
-                        <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                        <a href="{{ route('admin.logout') }}" class="btn btn-success btn-lg">Yes</a>
                         <button class="btn btn-default btn-lg mb-control-close">No</button>
                     </div>
                 </div>
