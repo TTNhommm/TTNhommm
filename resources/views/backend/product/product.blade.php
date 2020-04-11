@@ -61,11 +61,11 @@
                                     {{-- <td><span class="label label-success">New</span></td>
                                         <td>$430.20</td> --}}
                                     <td class="text-center" style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
-                                        hidden; -webkit-box-orient: vertical;">{{$product->description}}</td>
+                                        hidden; -webkit-box-orient: vertical;border-width:1px 0 0 0">{{$product->pro_content}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
                                             src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
-                                    <td class="text-center">Laptop đồ họa</td>
-                                    <td class="text-center">25.000.000</td>
+                                    <td class="text-center">{{ $product->pro_type}}</td>
+                                    <td class="text-center">{{ number_format($product->pro_price) }} VNĐ</td>
                                     <?php
                                         $category=DB::table('categories')->where('id',$product->id)->first();
                                     ?>

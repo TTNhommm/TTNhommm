@@ -5,7 +5,7 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>        
         <!-- META SECTION -->
-        <base href="{{ asset('/')}}">
+        <base href="{{ asset('public')}}/">
         <title>Electro Admin</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -41,7 +41,7 @@
                             <div class="col-md-6">
                                 <a href="#" class="btn btn-link btn-block">Quên mật khẩu?</a>
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <button type="submit"  class="btn btn-warning btn-block">Đăng nhập</button>
                             </div>
                         </div>
