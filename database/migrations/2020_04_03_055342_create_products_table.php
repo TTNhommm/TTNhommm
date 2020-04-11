@@ -17,10 +17,11 @@ class CreateProductsTable extends Migration
             $table->bigIncrements('id');
             $table->string('pro_name')->nullable();
             $table->string('pro_slug')->index();
+            $table->string('pro_type')->nullable();
             $table->longText('pro_content')->nullable();
             $table->tinyInteger('pro_sale')->default(0);
             $table->string('description')->nullable();
-            $table->Integer('pro_view')->default(0);
+            $table->Integer('pro_amount')->default(0);
             $table->tinyInteger('status')->default(0);
             $table->string('pro_image')->nullable();
             $table->tinyInteger('pro_hot')->default(0);
