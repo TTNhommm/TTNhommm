@@ -13,7 +13,7 @@
 <div class="page-content-wrap">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" method="POST" action="{{route('admin.post.create.product')}}">
+            <form enctype="multipart/form-data" class="form-horizontal" method="POST" action="{{route('admin.post.create.product')}}">
                 @csrf
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -25,12 +25,13 @@
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Danh mục</label>
                                     <div class="col-md-9">
-                                        <?php $categories=DB::Table('categories')->get() ?>
-                                        <select class="form-control select" id="">
+                                        <select class="form-control select" name="pro_cate_id" id="">
                                             <option value="">Chọn thương hiệu</option>
-                                            @foreach($categories as $category )
-                                            <option value="{{$category->id}}">{{$category->name}}</option>
-                                            @endforeach
+                                            @if(isset($categories))
+                                                @foreach($categories as $category )
+                                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                                @endforeach
+                                            @endif
                                         </select>
                                     </div>
                                 </div>
@@ -91,7 +92,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="cpu"/>
                                         </div>
                                     </div>
                                 </div>
@@ -100,7 +101,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="ram"/>
                                         </div>
                                     </div>
                                 </div>
@@ -109,7 +110,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="screen"/>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +119,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="card"/>
                                         </div>
                                     </div>
                                 </div>
@@ -127,7 +128,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="harddrive"/>
                                         </div>
                                     </div>
                                 </div>
@@ -136,7 +137,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="weight"/>
                                         </div>
                                     </div>
                                 </div>
@@ -145,7 +146,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="camera"/>
                                         </div>
                                     </div>
                                 </div>
@@ -154,7 +155,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="port"/>
                                         </div>
                                     </div>
                                 </div>
@@ -163,7 +164,7 @@
                                     <div class="col-md-9">
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" name="pin"/>
                                         </div>
                                     </div>
                                 </div>
@@ -171,7 +172,7 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <button class="btn btn-default">Xóa trường</button>
+                        <!-- <button class="btn btn-default">Xóa trường</button> -->
                         <button type="submit" class="btn btn-primary pull-right">Thêm</button>
                     </div>
                 </div>

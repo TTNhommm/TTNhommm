@@ -26,7 +26,7 @@ class AdminProductController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('backend.product.addProduct');
+        return view('backend.product.addProduct',compact('categories'));
     }
     public function store(Request $req)
     {
@@ -42,12 +42,13 @@ class AdminProductController extends Controller
         {
             $file = $req->file('pro_image');
             $filename = time().$file->getclientoriginalName();
-            $file->move('img/product',$filename);
+            $file->move('upload/upload_product',$filename);
             $product->pro_image = $filename;
         }
-        dd($product);
-        
-        // $product->save();
-        // return redirect()->back();
+        $description = $req->only('cpu','ram', 'screen', 'pin', 'card', 'camera', 'harddrive','weight','port');
+        $product->description = implode(",", $description);
+        $product->pro_amount += 1; 
+        $product->save();
+        return redirect()->back();
     }
 }
