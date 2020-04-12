@@ -47,6 +47,11 @@
                                             <option>Laptop mỏng nhẹ</option>
                                             <option>Laptop doanh nhân</option>
                                         </select>
+                                        @if($errors->has('pro_type'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_type')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -56,6 +61,11 @@
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                             <input type="text" class="form-control" name="pro_name"/>
                                         </div>
+                                         @if($errors->has('pro_name'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_name')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -65,20 +75,37 @@
                                             <span class="input-group-addon"><span class="fa fa-dollar"></span></span>
                                             <input type="text" class="form-control" name="pro_price" />
                                         </div>
+                                        @if($errors->has('pro_price'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_price')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Mô tả</label>
                                     <div class="col-md-9 col-xs-12">
                                         <textarea class="form-control" rows="5" name="pro_content"></textarea>
+                                        @if($errors->has('pro_content'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_content')!!}
+                                        </div>
+                                        @endif
                                     </div>
+                                   
                                 </div>
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Hình ảnh</label>
                                     <div class="col-md-9">
                                         <input type="file" class="fileinput btn-primary" name="pro_image" id="filename"
                                             title="Chọn hình ảnh" />
+                                            @if($errors->has('pro_image'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_image')!!}
+                                        </div>
+                                        @endif
                                     </div>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-offset-3 col-md-9">

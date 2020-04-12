@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <base href="{{ asset('/')}}">
+    <base href="{{ asset('public')}}/">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -90,6 +90,8 @@
     <script src="admin/js/plugins/jquery/jquery-ui.min.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap.min.js"></script>
 
+    <script src="admin/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+    <script src="admin/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap-file-input.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap-select.js"></script>
@@ -125,6 +127,20 @@
 
     <script src="admin/js/demo_dashboard.js"></script>
     <!-- END TEMPLATE -->
+    <script>
+        $(function(){
+            //Spinner
+            $(".spinner_default").spinner()
+            $(".spinner_decimal").spinner({step: 0.01, numberFormat: "n"});                
+            //End spinner
+            
+            //Datepicker
+            $('#dp-2').datepicker();
+            $('#dp-3').datepicker({startView: 2});
+            $('#dp-4').datepicker({startView: 1});                
+            //End Datepicker
+        });
+    </script>        
     <!-- END SCRIPTS -->
 
     <!-- COUNTERS // NOT INCLUDED IN TEMPLATE -->

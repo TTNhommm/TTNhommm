@@ -9,8 +9,10 @@ use App\Http\Requests\RequestProduct;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use App\Models\Category;
+use App\Http\Controllers\Controller as Controllers;
 
-class AdminProductController extends Controller
+
+class AdminProductController extends Controllers
 {
     public function index()
     {   
@@ -30,6 +32,22 @@ class AdminProductController extends Controller
     }
     public function store(Request $req)
     {
+        $this->validate($req,[
+            'pro_name' => 'required|unique:products,pro_name',
+            'pro_type'=> 'required',
+            'pro_price'=> 'required',
+            'pro_image'=> 'required',
+            'pro_content'=>'required',            
+
+        ],[
+            'pro_name.required'=>' Vui lòng nhập tên sản phẩm',
+            'pro_name.unique'=>'Sản phẩm đã tồn tại',
+            'pro_type'=> ' Vui lòng chọn loại sản phẩm',
+            'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
+            'pro_image.required'=>'Vui lòng chọn ảnh cho sản phẩm',
+            'pro_content.required'=>'Vui lòng nhập mô tả về sản phẩm',
+        ]);
+
         $product= new Product();
         $product->pro_name = $req->pro_name;
         $product->pro_type = $req->pro_type;
@@ -45,10 +63,10 @@ class AdminProductController extends Controller
             $file->move('upload/upload_product',$filename);
             $product->pro_image = $filename;
         }
-        $description = $req->only('cpu','ram', 'screen', 'pin', 'card', 'camera', 'harddrive','weight','port');
-        $product->description = implode(",", $description);
+        $pro_detail = $req->only('cpu','ram', 'screen', 'pin', 'card', 'camera', 'harddrive','weight','port');
+        $product->pro_detail = implode(",", $pro_detail);
         $product->pro_amount += 1; 
         $product->save();
-        return redirect()->back();
+        return redirect()->back()->with('success','Thêm sản phẩm thành công');
     }
 }

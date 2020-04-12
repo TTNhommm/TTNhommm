@@ -35,18 +35,20 @@
                             <div class="col-md-6 col-xs-12">
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <label class="check">
-                                            <div class="radio1" style="position: relative;">
-                                            <input type="radio" class="iradio" name="sex" value="Nam">
-                                            <!-- <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins> -->
-                                            </div> Nam</label>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="sex" value="Nam" id="Nam"/>
+                                                Nam
+                                            </label>
+                                        </div>
                                     </div>
                                     <div class="col-md-6">
-                                        <label class="check">
-                                            <div class="radio1" style="position: relative;">
-                                            <input type="radio" class="iradio" name="sex" value="Nữ">
-                                            <!-- <ins class="iCheck-helper" style="position: absolute; top: 0%; left: 0%; display: block; width: 100%; height: 100%; margin: 0px; padding: 0px; background: rgb(255, 255, 255); border: 0px; opacity: 0;"></ins> -->
-                                            </div> Nữ</label>
+                                        <div class="radio">
+                                            <label>
+                                                <input type="radio" name="sex" value="Nữ" id="Nữ"/>
+                                                Nữ
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
