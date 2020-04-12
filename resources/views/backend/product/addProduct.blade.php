@@ -29,29 +29,30 @@
                                             <option value="">Chọn thương hiệu</option>
                                             @if(isset($categories))
                                                 @foreach($categories as $category )
-                                                <option value="{{$category->id}}">{{$category->name}}</option>
+                                                <option value="{{$category->id}} 
+                                                {{ old('pro_cate_id',isset($product->pro_cate_id) ? $product->pro_cate_id : '')== $category->id ? "selected='selected'":"" }}">
+                                                {{$category->name}}</option>
                                                 @endforeach
                                             @endif
                                         </select>
+                                        @if($errors->has('pro_cate_id'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_cate_id')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
-
                                 <div class="form-group">
                                     <label class="col-md-3 control-label">Loại</label>
                                     <div class="col-md-9">
                                         <select class="form-control select" name="pro_type">
-                                            <option>Chọn loại laptop</option>
+                                            <!-- <option>Chọn loại laptop</option> -->
                                             <option>Laptop chơi game</option>
                                             <option>Laptop đồ họa</option>
                                             <option>Laptop văn phòng</option>
                                             <option>Laptop mỏng nhẹ</option>
                                             <option>Laptop doanh nhân</option>
                                         </select>
-                                        @if($errors->has('pro_type'))
-                                        <div class="help-block">
-                                            {!!$errors->first('pro_type')!!}
-                                        </div>
-                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
