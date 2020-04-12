@@ -34,6 +34,7 @@ class AdminProductController extends Controllers
     {
         $this->validate($req,[
             'pro_name' => 'required|unique:products,pro_name',
+            'pro_cate_id' => 'required',
             'pro_type'=> 'required',
             'pro_price'=> 'required',
             'pro_image'=> 'required',
@@ -41,6 +42,7 @@ class AdminProductController extends Controllers
 
         ],[
             'pro_name.required'=>' Vui lòng nhập tên sản phẩm',
+            'pro_cate_id.required' => 'Vui lòng nhập danh mục',
             'pro_name.unique'=>'Sản phẩm đã tồn tại',
             'pro_type'=> ' Vui lòng chọn loại sản phẩm',
             'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
@@ -63,10 +65,66 @@ class AdminProductController extends Controllers
             $file->move('upload/upload_product',$filename);
             $product->pro_image = $filename;
         }
-        $pro_detail = $req->only('cpu','ram', 'screen', 'pin', 'card', 'camera', 'harddrive','weight','port');
+        $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
         $product->pro_detail = implode(",", $pro_detail);
         $product->pro_amount += 1; 
         $product->save();
         return redirect()->back()->with('success','Thêm sản phẩm thành công');
+    }
+    public function edit($id)
+    {  
+        $categories = Category::all();
+        $product = Product::find($id);
+        $pro_detail = explode(',',$product->pro_detail);
+        $viewData =[
+            'categories' => $categories,
+            'product' => $product,
+            'pro_detail' => $pro_detail,
+            'index' => 0
+        ];
+        return view('backend.product.editProduct',$viewData);
+    }
+    public function update(Request $req,$id)
+    {
+        $product= Product::find($id);
+        $product->pro_name = $req->pro_name;
+        $product->pro_type = $req->pro_type;
+        $product->pro_slug =Str::slug($req->pro_name,'-');
+        $product->pro_content= $req->pro_content;
+        $product->pro_price  = $req->pro_price;
+        $product->pro_cate_id = $req->pro_cate_id;
+        if($req->hasFile('pro_image'))
+        {   $path_img_old ="upload/upload_product/".$product->pro_image;
+            // dd($path_img_old);
+            if(file_exists($path_img_old))
+            {
+                @unlink($path_img_old);
+            }
+            $file = $req->file('pro_image');
+            $filename = time().$file->getclientoriginalName();
+            $file->move('upload/upload_product',$filename);
+            $product->pro_image = $filename;
+        }
+        $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
+        $product->pro_detail = implode(",", $pro_detail);
+        // $product->pro_amount += 1; 
+        $product->save();
+        dd('thanh công');
+        // return redirect()->back()->with('success','Cập nhật sản phẩm thành công');
+    }
+    public function action($action,$id)
+    {
+        if(isset($action))
+        {   
+             $product   = Product::find($id);
+            switch($action)
+            {
+                case 'delete':
+                 $product->delete();
+                break;
+            }
+            // $product->save();
+        }
+        return redirect()->back();
     }
 }
