@@ -7,8 +7,10 @@ use Illuminate\Routing\Controller;
 use App\Http\Requests\RequestCategory;
 use App\Models\Category;
 use Illuminate\Support\Str;
+use App\Http\Controllers\Controller as Controllers;
 
-class AdminCategoryController extends Controller
+
+class AdminCategoryController extends Controllers
 {
     public function index()
     {   
@@ -25,6 +27,12 @@ class AdminCategoryController extends Controller
     }
     public function store(Request $req)
     {
+        $this->validate($req,[
+            'name'=>'required'
+        ],[
+            'name.required' => 'Vui lòng nhập tên danh mục',
+
+        ]);
         $categories = new Category();
         $categories->name = $req->name;
         $categories->cate_slug = Str::slug($req->name,'-');

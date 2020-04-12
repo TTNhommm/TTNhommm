@@ -70,7 +70,9 @@
                                         $category=DB::table('categories')->where('id',$product->id)->first();
                                     ?>
                                     <td class="text-center">
-                                        {{$category->name}}
+                                        @if(!empty($item->category))
+                                        {{ $category->name }}
+                                        @endif
                                     </td>
                                     <td class="text-center"> <label class="switch switch-small">
                                             <input type="checkbox" checked value="0" />

@@ -9,9 +9,10 @@ use App\Http\Requests\RequestProduct;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use App\Models\Category;
+use App\Http\Controllers\Controller as Controllers;
 
 
-class AdminProductController extends Controller
+class AdminProductController extends Controllers
 {
     public function index()
     {   
@@ -31,21 +32,21 @@ class AdminProductController extends Controller
     }
     public function store(Request $req)
     {
-        // $this->validate($req,[
-        //     'pro_name' => 'required|unique:products,name',
-        //     'pro_type'=> 'required',
-        //     'pro_price'=> 'required',
-        //     'pro_image'=> 'required',
-        //     'pro_content'=>'required',            
+        $this->validate($req,[
+            'pro_name' => 'required|unique:products,pro_name',
+            'pro_type'=> 'required',
+            'pro_price'=> 'required',
+            'pro_image'=> 'required',
+            'pro_content'=>'required',            
 
-        // ],[
-        //     'name.required'=>' Chưa nhập tên sản phẩm',
-        //     'name.unique'=>'Sản phẩm đã tồn tại',
-        //     'pro_type'=> ' Chưa chọn loại sản phẩm',
-        //     'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
-        //     'pro_image.required'=>'Vui lòng chọn ảnh cho sản phẩm',
-        //     'pro_content.required'=>'Vui lòng nhập mô tả về sản phẩm',
-        // ]);
+        ],[
+            'pro_name.required'=>' Vui lòng nhập tên sản phẩm',
+            'pro_name.unique'=>'Sản phẩm đã tồn tại',
+            'pro_type'=> ' Vui lòng chọn loại sản phẩm',
+            'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
+            'pro_image.required'=>'Vui lòng chọn ảnh cho sản phẩm',
+            'pro_content.required'=>'Vui lòng nhập mô tả về sản phẩm',
+        ]);
 
         $product= new Product();
         $product->pro_name = $req->pro_name;

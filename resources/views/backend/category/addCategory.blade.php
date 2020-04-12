@@ -26,12 +26,18 @@
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                             <input type="text" class="form-control" name="name" />
                                         </div>
+                                       @if($errors->has('name'))
+                                        <div class="help-block">
+                                            {!!$errors->first('name')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <label class="check" for="exampleCheck1">
-                                    <input type="checkbox" class="icheckbox" checked="checked" name="cate_status" id="exampleCheck1"/>Nổi bật
+                                    <input type="checkbox" class="icheckbox" checked="checked" name="cate_status"
+                                        id="exampleCheck1" />Nổi bật
                                 </label>
                             </div>
                         </div>
