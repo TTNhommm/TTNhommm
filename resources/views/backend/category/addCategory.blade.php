@@ -43,7 +43,7 @@
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <!-- <button class="btn btn-default">Xóa trường</button> -->
+                        <button class="btn btn-default">Xóa trường</button>
                         <button type="submit" class="btn btn-primary pull-right">Thêm</button>
                     </div>
                 </div>

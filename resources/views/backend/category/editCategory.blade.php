@@ -5,7 +5,7 @@
 <ul class="breadcrumb">
     <li><a href="{{ route('admin.home') }}">Trang chủ</a></li>
     <li><a href="{{ route('admin.get.list.category') }}">Danh mục</a></li>
-    <li class="active">Thêm danh mục</li>
+    <li class="active">Sửa danh mục</li>
 </ul>
 <div class="page-content-wrap">
     <div class="row">

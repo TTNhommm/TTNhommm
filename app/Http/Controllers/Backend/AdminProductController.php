@@ -39,15 +39,16 @@ class AdminProductController extends Controllers
             'pro_price'=> 'required',
             'pro_image'=> 'required',
             'pro_content'=>'required',            
-
+            'pro_detail'=>'required',
         ],[
             'pro_name.required'=>' Vui lòng nhập tên sản phẩm',
             'pro_cate_id.required' => 'Vui lòng nhập danh mục',
             'pro_name.unique'=>'Sản phẩm đã tồn tại',
-            'pro_type'=> ' Vui lòng chọn loại sản phẩm',
+            'pro_type.required'=> ' Vui lòng chọn loại sản phẩm',
             'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
-            'pro_image.required'=>'Vui lòng chọn ảnh cho sản phẩm',
+            'pro_image.required'=>'Vui lòng chọn hình ảnh cho sản phẩm',
             'pro_content.required'=>'Vui lòng nhập mô tả về sản phẩm',
+            'pro_detail.required'=>'Vui lòng nhập chi tiết thông số về sản phẩm',
         ]);
 
         $product= new Product();
@@ -61,8 +62,8 @@ class AdminProductController extends Controllers
         if($req->hasFile('pro_image'))
         {
             $file = $req->file('pro_image');
-            $filename = time().$file->getclientoriginalName();
-            $file->move('upload/upload_product',$filename);
+            $filename = $file->getclientoriginalName();
+            $file->move('public/img/product',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
@@ -94,15 +95,15 @@ class AdminProductController extends Controllers
         $product->pro_price  = $req->pro_price;
         $product->pro_cate_id = $req->pro_cate_id;
         if($req->hasFile('pro_image'))
-        {   $path_img_old ="upload/upload_product/".$product->pro_image;
+        {   $path_img_old ="public/img/product/".$product->pro_image;
             // dd($path_img_old);
             if(file_exists($path_img_old))
             {
                 @unlink($path_img_old);
             }
             $file = $req->file('pro_image');
-            $filename = time().$file->getclientoriginalName();
-            $file->move('upload/upload_product',$filename);
+            $filename = $file->getclientoriginalName();
+            $file->move('public/img/product',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
