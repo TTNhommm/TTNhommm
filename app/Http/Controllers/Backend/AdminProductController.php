@@ -31,8 +31,27 @@ class AdminProductController extends Controllers
         $categories = Category::all();
         return view('backend.product.addProduct',compact('categories'));
     }
-    public function store(RequestProduct $req)
+    public function store(Request $req)
     {
+        $this->validate($req,[
+            'pro_name' => 'required|unique:products,pro_name',
+            'pro_cate_id' => 'required',
+            'pro_type'=> 'required',
+            'pro_price'=> 'required',
+            'pro_image'=> 'required',
+            'pro_content'=>'required',            
+            'pro_detail'=>'required',
+        ],[
+            'pro_name.required'=>' Vui lòng nhập tên sản phẩm',
+            'pro_cate_id.required' => 'Vui lòng nhập danh mục',
+            'pro_name.unique'=>'Sản phẩm đã tồn tại',
+            'pro_type.required'=> ' Vui lòng chọn loại sản phẩm',
+            'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
+            'pro_image.required'=>'Vui lòng chọn hình ảnh cho sản phẩm',
+            'pro_content.required'=>'Vui lòng nhập mô tả về sản phẩm',
+            'pro_detail.required'=>'Vui lòng nhập chi tiết thông số về sản phẩm',
+        ]);
+
         $product= new Product();
         $product->pro_name = $req->pro_name;
         $product->pro_type = $req->pro_type;
@@ -44,7 +63,7 @@ class AdminProductController extends Controllers
         {
             $file = $req->file('pro_image');
             $filename = time().$file->getclientoriginalName();
-            $file->move('upload/upload_product',$filename);
+            $file->move('img/product/',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
@@ -68,6 +87,7 @@ class AdminProductController extends Controllers
     }
     public function update(EditProductRequest $req,$id)
     {
+        
         $product= Product::find($id);
         $product->pro_name = $req->pro_name;
         $product->pro_type = $req->pro_type;
@@ -91,8 +111,8 @@ class AdminProductController extends Controllers
         $product->pro_detail = implode(",", $pro_detail);
         // $product->pro_amount += 1; 
         $product->save();
-        dd('thanh công');
-        // return redirect()->back()->with('success','Cập nhật sản phẩm thành công');
+        // dd('thanh công');
+        return redirect()->back()->with('success','Cập nhật sản phẩm thành công');
     }
     public function action($action,$id)
     {
