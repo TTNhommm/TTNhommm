@@ -2,8 +2,8 @@
 @section('backend-main')
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
-    <li><a href="#">Trang chủ</a></li>
-    <li><a href="#">Sản phẩm</a></li>
+    <li><a href="{{ route('admin.home')}}">Trang chủ</a></li>
+    <li><a href="{{ route('admin.get.list.product')}}">Sản phẩm</a></li>
     <li class="active">Danh sách sản phẩm</li>
 </ul>
 <!-- END BREADCRUMB -->
@@ -49,7 +49,7 @@
                                     <td style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
                                         hidden; -webkit-box-orient: vertical;border-width:1px 0 0 0">{{$product->pro_content}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
-                                            src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
+src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
                                     <td class="text-center">{{ $product->pro_type}}</td>
                                     <td class="text-center">{{ number_format($product->pro_price) }} VNĐ</td>
                                     <?php
