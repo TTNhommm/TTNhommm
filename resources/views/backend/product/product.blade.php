@@ -28,7 +28,7 @@
                         <table class="table table-bordered table-striped table-actions">
                             <thead>
                                 <tr>
-                                <th width="50" class="text-center">ID</th>
+                                    <th width="50" class="text-center">ID</th>
                                     <th width="250" class="text-center">Tên sản phẩm</th>
                                     <th class="text-center">Mô tả</th>
                                     <th width="150" class="text-center">Hình ảnh</th>
@@ -47,15 +47,16 @@
                                     <td class="text-center">{{ $product->id }}</td>
                                     <td><strong>{{ $product->pro_name}}</strong></td>
                                     <td style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
-                                        hidden; -webkit-box-orient: vertical;border-width:1px 0 0 0">{{$product->pro_content}}</td>
+                                        hidden; -webkit-box-orient: vertical;border-width:1px 0 0 0">
+                                        {{$product->pro_content}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
-src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
+                                            src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
                                     <td class="text-center">{{ $product->pro_type}}</td>
                                     <td class="text-center">{{ number_format($product->pro_price) }} VNĐ</td>
                                     <?php
                                         $category=DB::table('categories')->where('id',$product->id)->first();
                                     ?>
-                                    <td class="text-center">        
+                                    <td class="text-center">
                                         {{ $product->getCategory() }}
                                     </td>
                                     <td class="text-center"> <label class="switch switch-small">
@@ -65,12 +66,12 @@ src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
                                     <td class="text-center">{{ date_format($product->created_at,'d/m/Y H:i:s') }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.get.action.product',['delete',$product->id])}}">
-                                           <button class="btn btn-danger btn-rounded btn-condensed btn-sm">
-                                           <span class="fa fa-times"></span></button>
+                                            <button class="btn btn-danger btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-times"></span></button>
                                         </a>
                                         <a href="{{ route('admin.get.edit.product',$product->id) }}">
                                             <button class="btn btn-primary btn-rounded btn-condensed btn-sm">
-                                            <span class="fa fa-pencil"></span></button>
+                                                <span class="fa fa-pencil"></span></button>
                                         </a>
                                     </td>
                                 </tr>
