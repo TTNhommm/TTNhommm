@@ -37,7 +37,7 @@
                                         </select>
                                         @if($errors->has('pro_cate_id'))
                                         <div class="help-block">
-                                            {!!$errors->first('pro_cate_id')!!}
+                                            {{ $errors->first('pro_cate_id') }}
                                         </div>
                                         @endif
                                     </div>

@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class RequestProduct extends FormRequest
+class EditProductRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class RequestProduct extends FormRequest
     public function rules()
     {
         return [
-            'pro_name' => 'required|unique:products,pro_name',
+            'pro_name' => 'required',
             'pro_cate_id' => 'required',
             'pro_type'=> 'required',
             'pro_price'=> 'required',
@@ -37,7 +37,6 @@ class RequestProduct extends FormRequest
         return [
             'pro_name.required'=>' Vui lòng nhập tên sản phẩm',
             'pro_cate_id.required' => 'Vui lòng nhập danh mục',
-            'pro_name.unique'=>'Sản phẩm đã tồn tại',
             'pro_type'=> ' Vui lòng chọn loại sản phẩm',
             'pro_price.required'=>'Vui lòng nhập giá sản phẩm',
             'pro_image.required'=>'Vui lòng chọn ảnh cho sản phẩm',

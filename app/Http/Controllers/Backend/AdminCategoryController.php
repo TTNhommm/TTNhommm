@@ -6,7 +6,9 @@ use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\RequestCategory;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller as Controllers;
 
 

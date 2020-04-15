@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\RequestProduct;
+use App\Http\Requests\EditProductRequest;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use App\Models\Category;
@@ -56,7 +57,6 @@ class AdminProductController extends Controllers
         $product->pro_type = $req->pro_type;
         $product->pro_slug =Str::slug($req->pro_name,'-');
         $product->pro_content= $req->pro_content;
-        // $product->pro_sale  =$req->pro_sale;
         $product->pro_price  = $req->pro_price;
         $product->pro_cate_id = $req->pro_cate_id;
         if($req->hasFile('pro_image'))
@@ -85,8 +85,9 @@ class AdminProductController extends Controllers
         ];
         return view('backend.product.editProduct',$viewData);
     }
-    public function update(Request $req,$id)
+    public function update(EditProductRequest $req,$id)
     {
+        
         $product= Product::find($id);
         $product->pro_name = $req->pro_name;
         $product->pro_type = $req->pro_type;
@@ -110,8 +111,8 @@ class AdminProductController extends Controllers
         $product->pro_detail = implode(",", $pro_detail);
         // $product->pro_amount += 1; 
         $product->save();
-        dd('thanh công');
-        // return redirect()->back()->with('success','Cập nhật sản phẩm thành công');
+        // dd('thanh công');
+        return redirect()->back()->with('success','Cập nhật sản phẩm thành công');
     }
     public function action($action,$id)
     {
@@ -124,7 +125,6 @@ class AdminProductController extends Controllers
                  $product->delete();
                 break;
             }
-            // $product->save();
         }
         return redirect()->back();
     }
