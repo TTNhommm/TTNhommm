@@ -4,7 +4,7 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
     <li><a href="#">Trang chủ</a></li>
-    <li><a href="#">Danh mục</a></li>
+    <li><a href="#">Sản phẩm</a></li>
     <li class="active">Thêm sản phẩm</li>
 </ul>
 <!-- END BREADCRUMB -->
@@ -46,7 +46,7 @@
                                     <label class="col-md-3 control-label">Loại</label>
                                     <div class="col-md-9">
                                         <select class="form-control select" name="pro_type">
-                                            <!-- <option>Chọn loại laptop</option> -->
+                                            <option>Vui lòng chọn loại laptop</option>
                                             <option>Laptop chơi game</option>
                                             <option>Laptop đồ họa</option>
                                             <option>Laptop văn phòng</option>
@@ -121,7 +121,13 @@
                                         <div class="input-group">
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="cpu"/>
+                                           
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -131,6 +137,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="ram"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -140,6 +151,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="screen"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -149,6 +165,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="card"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -158,6 +179,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="harddrive"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -167,6 +193,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="weight"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -176,6 +207,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="camera"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -185,6 +221,11 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="port"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                                 <div class="form-group">
@@ -194,13 +235,18 @@
                                             <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                             <input type="text" class="form-control" name="pin"/>
                                         </div>
+                                        @if($errors->has('pro_detail'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_detail')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <!-- <button class="btn btn-default">Xóa trường</button> -->
+                        {{-- <button class="btn btn-default">Xóa trường</button> --}}
                         <button type="submit" class="btn btn-primary pull-right">Thêm</button>
                     </div>
                 </div>

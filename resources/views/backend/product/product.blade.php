@@ -3,15 +3,11 @@
 <!-- START BREADCRUMB -->
 <ul class="breadcrumb">
     <li><a href="#">Trang chủ</a></li>
-    <li><a href="#">Tables</a></li>
-    <li class="active">Data Tables</li>
+    <li><a href="#">Sản phẩm</a></li>
+    <li class="active">Danh sách sản phẩm</li>
 </ul>
 <!-- END BREADCRUMB -->
-{{-- <!-- PAGE TITLE -->
- <div class="page-title">                    
-    <h2><span class="fa fa-arrow-circle-o-left"></span> Sortable Tables</h2>
-</div>
-<!-- END PAGE TITLE --> --}}
+
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap">
     <!-- START RESPONSIVE TABLES -->
@@ -33,11 +29,11 @@
                             <thead>
                                 <tr>
                                 <th width="50" class="text-center">ID</th>
-                                    <th width="100">Tên sản phẩm</th>
+                                    <th width="250" class="text-center">Tên sản phẩm</th>
                                     <th class="text-center">Mô tả</th>
                                     <th width="150" class="text-center">Hình ảnh</th>
-                                    <th width="100" class="text-center">Loại</th>
-                                    <th width="100" class="text-center">Giá</th>
+                                    <th width="150" class="text-center">Loại</th>
+                                    <th width="120" class="text-center">Giá</th>
                                     <th width="100" class="text-center">Danh mục</th>
                                     <th width="50" class="text-center">Trạng thái</th>
                                     <th width="120" class="text-center">Ngày nhập</th>
@@ -50,10 +46,10 @@
                                 <tr>
                                     <td class="text-center">{{ $product->id }}</td>
                                     <td><strong>{{ $product->pro_name}}</strong></td>
-                                    <td class="text-center" style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
+                                    <td style="display: -webkit-box; -webkit-line-clamp: 4; overflow:
                                         hidden; -webkit-box-orient: vertical;border-width:1px 0 0 0">{{$product->pro_content}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
-                                            src="{{asset("img/product/$product->pro_image")}}" alt=""></td>
+                                            src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td>
                                     <td class="text-center">{{ $product->pro_type}}</td>
                                     <td class="text-center">{{ number_format($product->pro_price) }} VNĐ</td>
                                     <?php
@@ -66,7 +62,7 @@
                                             <input type="checkbox" checked value="0" />
                                             <span></span>
                                         </label></td>
-                                    <td class="text-center">{{$product->created_at}}</td>
+                                    <td class="text-center">{{ date_format($product->created_at,'d/m/Y H:i:s') }}</td>
                                     <td class="text-center">
                                         <a href="{{ route('admin.get.action.product',['delete',$product->id])}}">
                                            <button class="btn btn-danger btn-rounded btn-condensed btn-sm">
