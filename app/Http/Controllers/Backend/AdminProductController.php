@@ -43,8 +43,8 @@ class AdminProductController extends Controllers
         if($req->hasFile('pro_image'))
         {
             $file = $req->file('pro_image');
-            $filename = time().$file->getclientoriginalName();
-            $file->move('img/product',$filename);
+            $filename = $file->getclientoriginalName();
+            $file->move('public/img/product',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
@@ -77,15 +77,15 @@ class AdminProductController extends Controllers
         $product->pro_price  = $req->pro_price;
         $product->pro_cate_id = $req->pro_cate_id;
         if($req->hasFile('pro_image'))
-        {   $path_img_old ="img/product/".$product->pro_image;
+        {   $path_img_old ="public/img/product/".$product->pro_image;
             // dd($path_img_old);
             if(file_exists($path_img_old))
             {
                 @unlink($path_img_old);
             }
             $file = $req->file('pro_image');
-            $filename = time().$file->getclientoriginalName();
-            $file->move('img/product',$filename);
+            $filename = $file->getclientoriginalName();
+            $file->move('public/img/product',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
