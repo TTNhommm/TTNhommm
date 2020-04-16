@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-    <base href="{{ asset('public')}}/">
+    <base href="{{ asset('/')}}">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -40,25 +40,9 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
+
     <!-- MESSAGE BOX-->
-    <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
-        <div class="mb-container">
-            <div class="mb-middle">
-                <div class="mb-title"><span class="fa fa-times"></span> Xác nhận <strong>xóa</strong> ?</div>
-                <div class="mb-content">
-                    <p>Nếu bạn muốn xóa mục này</p>
-                    <p>Hãy ấn XÓA</p>
-                </div>
-                <div class="mb-footer">
-                    <div class="pull-right">
-                        <button class="btn btn-warning btn-lg mb-control-yes">Xóa</button>
-                        <button class="btn btn-default btn-lg mb-control-close">Hủy</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END MESSAGE BOX-->
+    
 
     <!-- MESSAGE BOX-->
     <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
@@ -199,6 +183,22 @@
         });
 
     </script>
+
+<script>
+    $(".notiDelete").click(function(){
+    $("#mb-remove-row").addClass("open");
+    });
+</script>
+<script>
+    var data = document.getElementById("noti").value;
+    if(!data)
+    {
+        $("#notifi").addClass("open");
+    }
+
+</script>
+
+
 </body>
 
 </html>

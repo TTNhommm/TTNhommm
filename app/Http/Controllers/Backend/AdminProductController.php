@@ -77,7 +77,7 @@ class AdminProductController extends Controllers
         $product->pro_price  = $req->pro_price;
         $product->pro_cate_id = $req->pro_cate_id;
         if($req->hasFile('pro_image'))
-        {   $path_img_old ="public/img/product/".$product->pro_image;
+        {   $path_img_old ="img/product/".$product->pro_image;
             // dd($path_img_old);
             if(file_exists($path_img_old))
             {
@@ -85,14 +85,12 @@ class AdminProductController extends Controllers
             }
             $file = $req->file('pro_image');
             $filename = $file->getclientoriginalName();
-            $file->move('public/img/product',$filename);
+            $file->move('img/product',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
         $product->pro_detail = implode(",", $pro_detail);
-        // $product->pro_amount += 1; 
         $product->save();
-        // dd('thanh công');
         return redirect()->back()->with('success','Cập nhật sản phẩm thành công');
     }
     public function action($action,$id)

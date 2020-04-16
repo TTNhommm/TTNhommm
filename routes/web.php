@@ -23,10 +23,10 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
 
 });
 //auth
+
 Route::group(['namespace'=>'Auth'],function(){
      Route::group(['prefix'=>'auth'],function(){
           Route::get('/admin','RegisterController@index')->name('get.home.login');
-          // Route::get('/register/admin','UserController@getLoginAdmin')->name('get.login.admin');
           Route::get('/register','RegisterController@create')->name('get.register');
           Route::post('/register','RegisterController@store')->name('post.register');
           Route::get('/login','LoginController@getlogin')->name('admin.get.login');
