@@ -42,7 +42,7 @@
                                     <td class="text-center">{{ $category->id }}</td>
                                     <td><strong>{{ $category->name }}</strong></td>
                                     <td class="text-center">{{ $category->cate_status }}</td>
-                                    <td class="text-center">{{ $category->created_at }}</td>
+                                    <td class="text-center">{{ date_format($category->created_at,'d/m/Y H:i:s') }}</td>
                                     <td class="text-center">
 
                                         <a href="{{ route('admin.get.edit.category',$category->id) }}">
@@ -55,6 +55,28 @@
                                         <!-- </a> -->
                                     </td>
                                 </tr>
+<!--
+                                    <tr id="row_{{ $category->id }}">
+                                        <td class="text-center">{{ $category->id }}</td>
+                                        <td><strong>{{ $category->name }}</strong></td>
+                                        <td class="text-center">{{ $category->cate_status }}</td>
+                                        <td class="text-center">{{ date_format($category->created_at,'d/m/Y H:i:s') }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ route('admin.get.edit.category',$category->id) }}">
+                                                <button class="btn btn-primary btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-pencil"></span></button>
+                                            </a> 
+                                            <a href="{{ route('admin.get.action.category',['delete',$category->id]) }}">
+                                                <button class="btn btn-danger btn-rounded btn-condensed btn-sm"   onClick="delete_row('row_{{ $category->id }}');"><span 
+                                                class="fa fa-times"></span></button>
+                                            </a>
+                                            {{-- <a href="{{ route('admin.get.action.category',['delete',$category->id]) }}">
+                                                <button class="btn btn-danger btn-rounded btn-condensed btn-sm"   onclick="return confirm('Bạn muốn xóa danh mục này')" title="Xóa"><span 
+                                                class="fa fa-times"></span></button>
+                                            </a> --}}
+                                        </td>
+                                    </tr>
+ -->
                                 @endforeach
                                 @endif
                             </tbody>
