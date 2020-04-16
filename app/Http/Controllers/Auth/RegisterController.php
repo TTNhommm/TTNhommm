@@ -28,11 +28,11 @@ class RegisterController extends Controller
 
     public function index()
     { 
-        $message ="Bạn không đủ thẩm quyền";
         $user = Auth::user();
         if($user && $user->level > 1)
         {
-            dd($message);
+            $message = 'Bạn không đủ thẩm quyền';
+            return view('backend.index',compact('message'));
         }
         else{
             return view('backend.user.userEmployee');
@@ -43,7 +43,6 @@ class RegisterController extends Controller
         $user = Auth::user();
         if(!$user)
         {
-            // return view('backend.login');
             return redirect()->route('admin.get.login');
         }
         else{
