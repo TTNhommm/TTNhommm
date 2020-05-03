@@ -90,6 +90,5 @@
     </div>
     <!-- END RESPONSIVE TABLES -->
 
-</div>
-<!-- PAGE CONTENT WRAPPER 
+</div> 
 @stop

@@ -8796,3 +8796,16 @@ li.ext_zip {
     margin-left: 0px;
   }
 }
+
+.cart-toggler:hover .small-cart-content{
+ display: block;
+}
+.small-cart-content
+{
+  background-color: chartreuse;
+  display: none;
+}
+.small-cart-content ul li {
+  list-style: none;
+}
+

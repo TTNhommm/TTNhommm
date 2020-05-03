@@ -5,7 +5,7 @@
     <li><a href="#">Trang chủ</a></li>
     <li><a href="#">Đơn hàng</a></li>
     <li><a href="#">Chi tiết đơn hàng</a></li>
-    <li class="active">#ĐH1</li>
+    <li class="active">#ĐH{{ $orders->id}}</li>
 </ul>
 <!-- END BREADCRUMB -->                                                
 
@@ -17,7 +17,7 @@
             
             <div class="panel panel-default">
                 <div class="panel-body">                            
-                    <h2>CHI TIẾT ĐƠN HÀNG <strong>#ĐH1</strong></h2>
+                    <h2>CHI TIẾT ĐƠN HÀNG <strong>#ĐH{{ $orders->id}}</strong></h2>
                     <div class="push-down-10 pull-right">
                         <button class="btn btn-primary"><span class="fa fa-print"></span> In</button>                                        
                     </div>
@@ -42,10 +42,10 @@
                                 <div class="invoice-address">
                                     <h5>Đến</h5>
                                     <h6>Nhà riêng</h6>
-                                    <p>Trần Duy Thắng</p>
-                                    <p>CT10 khu đô thị Việt Hưng</p>
-                                    <p>Long Biên, Hà Nội</p>
-                                    <p>Phone: 0944 126-876</p>
+                                    <p>{{ $orders->nameguest }}</p>
+                                    <p>{{ $orders->emailguest }}</p>
+                                    <p>{{ $orders->address }}</p>
+                                    <p>Phone: {{ $orders->phone }}</p>
                                 </div>                                        
 
                             </div>
@@ -55,13 +55,13 @@
                                     <h5>Hóa đơn</h5>
                                     <table class="table table-striped">
                                         <tr>
-                                            <td width="200">Mã hóa đơn:</td><td class="text-right">#ĐH1</td>
+                                            <td width="200">Mã hóa đơn:</td><td class="text-right">#ĐH{{ $orders->id}}</td>
                                         </tr>
                                         <tr>
-                                            <td>Ngày nhập hóa đơn:</td><td class="text-right">03/03/2020</td>
+                                            <td>Ngày nhập hóa đơn:</td><td class="text-right">{{ $orders->created_at }}</td>
                                         </tr>
                                         <tr>
-                                            <td><strong>Tổng hóa đơn:</strong></td><td class="text-right"><strong>78.000.000 VNĐ</strong></td>
+                                            <td><strong>Tổng hóa đơn:</strong></td><td class="text-right"><strong>{{ $orders->price_order}}</strong></td>
                                         </tr>
                                     </table>
 
@@ -78,75 +78,24 @@
                                     <th class="text-center">Số lượng</th>
                                     <th class="text-right">Tổng</th>
                                 </tr>
-                                <tr>
+                                
+                                <?php $order_detail = explode(',',$orders->info_order); ?>
+                                @for($key =0; $key < count($order_detail); $key++)
+                               
+                                <tr> 
+                                @if($key % 2 == 0 )
                                     <td>
-                                        <strong>Apple Macbook Pro 2020</strong>
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sed mi sit amet porta.</p> --}}
-                                    </td>
-                                    <td class="text-center">26.000.000 VNĐ</td>
-                                    <td class="text-center">1</td>
+                                        <strong>{{ $order_detail[$key] }}</strong>
+                                    </td> 
+                                    <td class="text-center"></td>
+                                    <td class="text-center">{{ $order_detail[$key+1] }}</td>
                                     <td class="text-right">26.000.000 VNĐ</td>
+                                @endif
+                                    
                                 </tr>
-                                <tr>
-                                    <td>
-                                        <strong>Apple Macbook Pro 2020</strong>
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sed mi sit amet porta.</p> --}}
-                                    </td>
-                                    <td class="text-center">26.000.000 VNĐ</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-right">26.000.000 VNĐ</td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <strong>Apple Macbook Pro 2020</strong>
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras sagittis sed mi sit amet porta.</p> --}}
-                                    </td>
-                                    <td class="text-center">26.000.000 VNĐ</td>
-                                    <td class="text-center">1</td>
-                                    <td class="text-right">26.000.000 VNĐ</td>
-                                </tr>
+                               
+                                @endfor
                             </table>
-                        </div>
-                        
-                        <div class="row">
-                            <div class="col-md-6">
-                                <h4>Hình thức thanh toán</h4>
-                                
-                                <div class="paymant-table">
-                                    {{-- <a href="#" class="active">
-                                        <img src="{{ url('/') }}/public/admin/img/cards/paypal.png"/> PayPal
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </a>
-                                    <a href="#">
-                                        <img src="{{ url('/') }}/public/admin/img/cards/visa.png"/> Visa
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    </a> --}}
-                                    <a href="#">
-                                        {{-- <img src="{{ url('/') }}/public/admin/img/cards/mastercard.png"/>  --}}
-                                        Thanh toán khi nhận hàng
-                                        {{-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> --}}
-                                    </a>
-                                </div>
-                                
-                            </div>
-                            <div class="col-md-6">
-                                <h4>Khoản thanh toán</h4>
-                                
-                                <table class="table table-striped">
-                                    <tr>
-                                        <td width="200"><strong>Tạm tính:</strong></td><td class="text-right">78.000.000 VNĐ</td>
-                                    </tr>
-                                    <tr>
-                                        <td><strong>Thuế (VAT 10%):</strong></td><td class="text-right">7.800.000 VNĐ</td>
-                                    </tr>
-                                    {{-- <tr>
-                                        <td><strong>Discount (2%):</strong></td><td class="text-right">$50.66</td>
-                                    </tr> --}}
-                                    <tr class="total">
-                                        <td>Tổng thanh toán:</td><td class="text-right">85.800.000 VNĐ</td>
-                                    </tr>
-                                </table>                                                
-                            </div>
                         </div>
                         
                         <div class="row">

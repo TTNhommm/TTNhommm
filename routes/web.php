@@ -19,7 +19,24 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
         Route::get('/update/{id}','AdminProductController@edit')->name('admin.get.edit.product');
         Route::post('/update/{id}','AdminProductController@update')->name('admin.post.update.product');
         Route::get('/{action}/{id}','AdminProductController@action')->name('admin.get.action.product');
+     //    Route::get('/order','AdminProductController@index1')->name('admin.get.list.order');
    });
+    //order
+    Route::group(['prefix'=>'order'],function(){
+    
+     Route::get('/OrderApprove','AdminOrderController@getOrderApprove')->name('admin.get.list.order');
+     Route::get('/OrderDetail/{id}','AdminOrderController@showOrder')->name('order.detail');
+     Route::get('/OrderNotApprove','AdminOrderController@getOrderNotApprove')->name('admin.get.list.order.not');
+     Route::get('/','AdminOrderController@getCart')->name('admin.get.cart');
+
+     Route::get('/cart', 'AdminOrderController@cart')->name('cart.index');
+     Route::get('/checkout', 'AdminOrderController@checkout')->name('check.get');
+     Route::post('/checkout', 'AdminOrderController@saveOrder')->name('check.post');
+     Route::post('/add', 'AdminOrderController@add')->name('cart.store');
+     // Route::post('/update', 'AdminOrderController@update')->name('cart.update');
+     // Route::post('/remove', 'AdminOrderController@remove')->name('cart.remove');     
+     Route::get('/clear', 'AdminOrderController@clear')->name('cart.clear');
+});
 
 });
 //auth
