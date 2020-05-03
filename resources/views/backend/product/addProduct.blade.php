@@ -84,6 +84,20 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
+                                    <label class="col-md-3 control-label">Số Lượng</label>
+                                    <div class="col-md-9">
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><span class="fa fa-info"></span></span>
+                                            <input type="text" class="form-control" name="pro_amount" />
+                                        </div>
+                                        @if($errors->has('pro_amount'))
+                                        <div class="help-block">
+                                            {!!$errors->first('pro_amount')!!}
+                                        </div>
+                                        @endif
+                                    </div>
+                                </div>
+                                <div class="form-group">
                                     <label class="col-md-3 control-label">Mô tả</label>
                                     <div class="col-md-9 col-xs-12">
                                         <textarea class="form-control" rows="5" name="pro_content"></textarea>

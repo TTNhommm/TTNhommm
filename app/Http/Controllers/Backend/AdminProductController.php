@@ -15,6 +15,10 @@ use App\Http\Controllers\Controller as Controllers;
 
 class AdminProductController extends Controllers
 {
+    public function index1()
+    {
+        return view('backend.order.orderApprove');   
+    }
     public function index()
     {   
         $products = Product::all();
@@ -44,12 +48,12 @@ class AdminProductController extends Controllers
         {
             $file = $req->file('pro_image');
             $filename = $file->getclientoriginalName();
-            $file->move('public/img/product',$filename);
+            $file->move('img/product',$filename);
             $product->pro_image = $filename;
         }
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
         $product->pro_detail = implode(",", $pro_detail);
-        $product->pro_amount += 1; 
+        $product->pro_amount += $req->pro_amount; 
         $product->save();
         return redirect()->back()->with('success','Thêm sản phẩm thành công');
     }
@@ -88,6 +92,7 @@ class AdminProductController extends Controllers
             $file->move('img/product',$filename);
             $product->pro_image = $filename;
         }
+        // $product->pro_amount = $req->pro_amount;
         $pro_detail = $req->only('cpu','ram', 'screen', 'card','harddrive','weight', 'camera', 'port','pin');
         $product->pro_detail = implode(",", $pro_detail);
         $product->save();

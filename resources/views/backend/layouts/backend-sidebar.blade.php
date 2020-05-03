@@ -23,24 +23,24 @@
             </div>                                                                        
         </li>
         <li class="xn-openable">
-            <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Danh mục</span></a>
+            <a href="#"><span class="fa fa-table"></span> <span class="xn-text">Nhà cung cấp</span></a>
             <ul>                            
-                <li><a href="{{ route('admin.get.list.category')}}"><span class="fa fa-align-justify"></span> Danh sách danh mục</a></li>
-                <li><a href="{{ route('admin.get.create.category')}}"><span class="fa fa-plus"></span> Thêm danh mục</a></li>
+                <li><a href="{{ route('admin.get.list.category')}}"><span class="fa fa-align-justify"></span> Danh sách nhà cung cấp</a></li>
+                <li><a href="{{ route('admin.get.create.category')}}"><span class="fa fa-plus"></span> Thêm nhà cung cấp</a></li>
             </ul>
         </li>
         <li class="xn-openable">
-            <a href="#"><span class="fa fa-laptop"></span> <span class="xn-text">Sản phẩm</span></a>
+            <a href="#"><span class="fa fa-laptop"></span> <span class="xn-text">Đơn hàng nhập</span></a>
             <ul>                            
-                <li><a href="{{ route('admin.get.list.product')}}"><span class="fa fa-align-justify"></span> Danh sách sản phẩm</a></li>
-                <li><a href="{{route('admin.get.create.product')}}"><span class="fa fa-plus"></span> Thêm sản phẩm</a></li>
+                <li><a href="{{ route('admin.get.list.product')}}"><span class="fa fa-align-justify"></span> Danh sách đơn hàng</a></li>
+                <li><a href="{{route('admin.get.create.product')}}"><span class="fa fa-plus"></span> Thêm đơn hàng</a></li>
             </ul>
         </li>
         <li class="xn-openable">
-            <a href="#"><span class="fa fa-shopping-cart"></span> <span class="xn-text">Đơn hàng</span></a>
+            <a href="#"><span class="fa fa-shopping-cart"></span> <span class="xn-text">Đơn hàng xuất</span></a>
             <ul>                            
-                <li><a href="#"><span class="fa fa-times"></span> Đơn hàng chưa duyệt</a></li>
-                <li><a href="#"><span class="fa fa-check"></span> Đơn hàng đã duyệt</a></li>
+                <li><a href="{{ route('admin.get.list.order.not')}}"><span class="fa fa-times"></span> Đơn hàng chưa duyệt</a></li>
+                <li><a href="{{ route('admin.get.list.order')}}"><span class="fa fa-check"></span> Đơn hàng đã duyệt</a></li>
             </ul>
         </li>
         <li class="xn-openable">

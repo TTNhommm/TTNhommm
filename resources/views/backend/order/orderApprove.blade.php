@@ -1,3 +1,4 @@
+
 @extends('backend.layouts.backend-master')
 @section('backend-main')
 <!-- START BREADCRUMB -->
@@ -19,8 +20,8 @@
                 <div class="panel-heading">
                     <div class="page-head-text">
                         <h1 class="panel-title"><strong>Quản lý</strong> đơn hàng đã duyệt</h1>
-                        <a href="{{ route('order-notapprove')}}">
-                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-check"></span> Đơn hàng đã duyệt</button>
+                        <a href="{{ route('admin.get.list.order.not') }}">
+                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-check"></span> Đơn hàng chưa duyệt</button>
                         </a>
                     </div>
                 </div>
@@ -60,14 +61,14 @@
                                     <td class="text-center"><button type="button" class="btn btn-primary">Đã
                                             duyệt</button></td>
                                     <td class="text-center">
-                                        <a href="{{ route('order-detail')}}"><button
+                                        <a href="{{ route('order.detail') }}"><button
                                                 class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
                                                     class="fa fa-info"></span></button></a>
                                         <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
                                             onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
                                     </td>
                                 </tr>
-                                <tr id="trow_2">
+                                <!-- <tr id="trow_2">
                                     <td class="text-center">1</td>
                                     <td><strong>Trần Duy Thắng</strong></td>
                                     {{-- <td><span class="label label-success">New</span></td>
@@ -81,7 +82,7 @@
                                     <td class="text-center"><button type="button" class="btn btn-primary">Đã
                                             duyệt</button></td>
                                     <td class="text-center">
-                                        <a href="{{ route('order-detail')}}"><button
+                                        <a href=""><button
                                                 class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
                                                     class="fa fa-info"></span></button></a>
                                         <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
@@ -102,13 +103,13 @@
                                     <td class="text-center"><button type="button" class="btn btn-primary">Đã
                                             duyệt</button></td>
                                     <td class="text-center">
-                                        <a href="{{ route('order-detail')}}"><button
+                                        <a href=""><button
                                                 class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
                                                     class="fa fa-info"></span></button></a>
                                         <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
                                             onClick="delete_row('trow_3');"><span class="fa fa-times"></span></button>
                                     </td>
-                                </tr>
+                                </tr> -->
                             </tbody>
                         </table>
                     </div>
