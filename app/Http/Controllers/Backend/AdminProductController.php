@@ -15,13 +15,16 @@ use App\Http\Controllers\Controller as Controllers;
 
 class AdminProductController extends Controllers
 {
-    public function index1()
-    {
-        return view('backend.order.orderApprove');   
-    }
-    public function index()
-    {   
-        $products = Product::all();
+    public function index(Request $req )
+    {   $products = Product::get();
+        if($req->name)
+        {
+            $products->where('pro_name','like','%'.$req->name.'%');
+        }
+        if($req->cate) 
+        {
+            $products =$products->where('pro_cate_id',$req->cate);
+        }
         $categories = Category::all();
         $viewData =[
             'categories' => $categories,

@@ -23,6 +23,31 @@
                         </a>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <form action="" class="form-inline" style="margin-bottom :15px">
+                            <div class="form-group">
+                                <input class="form-control" type="text" name="name" placeholder="Search"
+                                    value="{{ \Request::get('name') }}">
+                            </div>
+                            <div class="form-group">
+                                <select name="cate" id=""
+                                    style="padding: 7px 0px;border-radius: 8%;border: 1px solid #ccc;">
+                                    <option value="">Danh mục </option>
+                                    @if($categories)
+                                    @foreach($categories as $item)
+                                    <option value="{{ $item->id }}"
+                                        {{ \Request::get('cate') == $item->id ? "selected = 'selected'" : ""  }}>
+                                        {{ $item->name }}
+                                    </option>
+                                    @endforeach
+                                    @endif
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                        </form>
+                    </div>
+                </div>
                 <div class="panel-body panel-body-table">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-actions">
@@ -40,7 +65,7 @@
                                     <th width="120" class="text-center">Hành động</th>
                                 </tr>
                             </thead>
-                            
+
                             <tbody>
                                 @if(isset($products))
                                 @foreach($products as $product )
@@ -51,8 +76,8 @@
                                         hidden; -webkit-box-orient: vertical;border-width:1px 0 0 0">
                                         {{$product->pro_content}}</td>
                                     <td class="text-center"><img class="img-fluid" style="width:100px"
-                                        src="{{ asset("img/product/$product->pro_image")}}" alt=""></td>
-                                          <!--  src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td> -->
+                                            src="{{ asset("img/product/$product->pro_image")}}" alt=""></td>
+                                    <!--  src="{{asset("public/img/product/$product->pro_image")}}" alt=""></td> -->
                                     <td class="text-center">{{ $product->pro_type}}</td>
                                     <td class="text-center">{{ number_format($product->pro_price) }} VNĐ</td>
                                     <?php
@@ -90,5 +115,5 @@
     </div>
     <!-- END RESPONSIVE TABLES -->
 
-</div> 
+</div>
 @stop
