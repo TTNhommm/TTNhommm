@@ -12,9 +12,18 @@ class AdminOrderController extends Controller
 {
     public function getOrderApprove()
     {
-        // $orders = Orders::where('status',1)->get();
-        // return view('backend.order.orderApprove',compact('orders'));
-        return view('backend.order.orderApprove');
+        $orders = Orders::where('status',1)->get();
+        return view('backend.order.orderApprove',compact('orders'));
+        // return view('backend.order.orderApprove');
+    }
+    public function reset($id)
+    {
+        $orders = Orders::find($id);
+        $orders->status = 1;
+        $orders->save();
+        // App\Models\Orders::where('id', $id)
+        //       ->update(['status' => 1]);
+              return redirect()->back();
     }
     public function getOrderNotApprove()
     {
@@ -116,5 +125,19 @@ class AdminOrderController extends Controller
         \Cart::clear();
         return route('admin.get.list.order.not');
 
+    }
+    public function action($action,$id)
+    {
+        if(isset($action))
+        {   
+             $orders   = Orders::find($id);
+            switch($action)
+            {
+                case 'delete':
+                 $orders->delete();
+                break;
+            }
+        }
+        return redirect()->back();
     }
 }

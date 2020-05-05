@@ -65,8 +65,11 @@
                                     </td>
                                     <td class="text-center">{{ $order->price_order }}</td>
                                     <td class="text-center">{{ $order->note }}</td>
-                                    <td class="text-center"><button type="button" class="btn btn-warning">Chưa
-                                            duyệt</button></td>
+                                    <td class="text-center">
+                                        <a href="{{route('cart.reset',$order->id)}}">   
+                                            <button type="button" class="btn btn-warning">Chưa duyệt </button>
+                                        </a>
+                                    </td>
                                     <td class="text-center">
                                         <a href="{{ route('cart.update.get',$order->id) }}">
                                             <button class="btn btn-warning btn-rounded btn-condensed btn-sm">
@@ -78,8 +81,7 @@
                                                 <span class="fa fa-info"></span>
                                             </button>
                                         </a>
-                                        
-                                        <a href="">
+                                        <a href="{{ route('cart.delete',['delete',$order->id]) }}">
                                            <button class="btn btn-danger btn-rounded btn-condensed btn-sm">
                                                 <span class="fa fa-times"></span>
                                            </button>

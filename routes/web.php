@@ -36,7 +36,9 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
      Route::get('/update/{id}', 'AdminOrderController@getupdate')->name('cart.update.get');
      // Route::get('/update', 'AdminOrderController@update')->name('cart.update');
      Route::post('/update', 'AdminOrderController@update')->name('cart.update');
-     Route::post('/remove', 'AdminOrderController@remove')->name('cart.remove');     
+     Route::get('/reset/{id}', 'AdminOrderController@reset')->name('cart.reset');
+     Route::post('/remove', 'AdminOrderController@remove')->name('cart.remove'); 
+     Route::get('/{action}/{id}', 'AdminOrderController@action')->name('cart.delete');    
      Route::get('/clear', 'AdminOrderController@clear')->name('cart.clear');
 });
 
