@@ -69,7 +69,6 @@
 
                             </div>
                         </div>
-                        
                         <div class="table-invoice">
                             <table class="table">
                                 <tr>
@@ -78,22 +77,16 @@
                                     <th class="text-center">Số lượng</th>
                                     <th class="text-right">Tổng</th>
                                 </tr>
-                                
                                 <?php $order_detail = explode(',',$orders->info_order); ?>
-                                @for($key =0; $key < count($order_detail); $key++)
-                               
+                                @for($key =0; $key < count($order_detail); $key +=3)
                                 <tr> 
-                                @if($key % 2 == 0 )
                                     <td>
                                         <strong>{{ $order_detail[$key] }}</strong>
                                     </td> 
-                                    <td class="text-center"></td>
                                     <td class="text-center">{{ $order_detail[$key+1] }}</td>
-                                    <td class="text-right">26.000.000 VNĐ</td>
-                                @endif
-                                    
+                                    <td class="text-center">{{ $order_detail[$key+2] }}</td>
+                                    <td class="text-right">{{ $order_detail[$key+1]*$order_detail[$key+2] }} VNĐ</td>    
                                 </tr>
-                               
                                 @endfor
                             </table>
                         </div>

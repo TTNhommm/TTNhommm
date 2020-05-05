@@ -46,7 +46,7 @@
 									</div>
 								</div>
 							</div> -->
-                            <a href="{{ route('check.get')}}">
+                            <a href="{{ route('cart.index')}}">
                             <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-plus"></span> Xem hóa đơn </button>
                         </a>
                     </div>
