@@ -33,8 +33,10 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
      Route::get('/checkout', 'AdminOrderController@checkout')->name('check.get');
      Route::post('/checkout', 'AdminOrderController@saveOrder')->name('check.post');
      Route::post('/add', 'AdminOrderController@add')->name('cart.store');
-     // Route::post('/update', 'AdminOrderController@update')->name('cart.update');
-     // Route::post('/remove', 'AdminOrderController@remove')->name('cart.remove');     
+     Route::get('/update/{id}', 'AdminOrderController@getupdate')->name('cart.update.get');
+     // Route::get('/update', 'AdminOrderController@update')->name('cart.update');
+     Route::post('/update', 'AdminOrderController@update')->name('cart.update');
+     Route::post('/remove', 'AdminOrderController@remove')->name('cart.remove');     
      Route::get('/clear', 'AdminOrderController@clear')->name('cart.clear');
 });
 

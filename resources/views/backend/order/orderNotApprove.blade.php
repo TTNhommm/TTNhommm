@@ -37,14 +37,14 @@
                             <thead>
                                 <tr>
                                     <th width="50" class="text-center">ID</th>
-                                    <th width="200">Tên khách hàng</th>
-                                    <th width="200" class="text-center">Email</th>
-                                    <th width="120" class="text-center">Số điện thoại</th>
+                                    <th width="150">Tên khách hàng</th>
+                                    <th width="100" class="text-center">Email</th>
+                                    <th width="100" class="text-center">Số điện thoại</th>
                                     <th width="200" class="text-center">Địa chỉ</th>
-                                    <th width="200" class="text-center">Thông tin đơn hàng</th>
+                                    <th width="300" class="text-center">Thông tin đơn hàng</th>
                                     <th width="200" class="text-center">Tổng thanh toán</th>
                                     <th class="text-center">Chú thích</th>
-                                    <th width="120" class="text-center">Trạng thái</th>
+                                    <th width="80" class="text-center">Trạng thái</th>
                                     <th width="120" class="text-center">Hành động</th>
                                 </tr>
                             </thead>
@@ -58,26 +58,32 @@
                                     <td class="text-center">{{ $order->emailguest }}</td>
                                     <td class="text-center">{{ $order->phone }}</td>
                                     <td class="text-center">{{ $order->address }}</td>
-                                        <td class="text-center">
-                                            @foreach($order_detail as $key => $item)
-                                            @if($key % 2 == 0)
-                                             {{ $item.' ' }}
-                                            @else 
-                                            {{ 'X'.$item }} <br>
-                                            @endif
-                                            @endforeach
-                                        </td>
+                                    <td class="text-center">
+                                        @for($key =0; $key < count($order_detail); $key +=3)
+                                            {{ $order_detail[$key].' x'.$order_detail[$key+1].' '.$order_detail[$key+2].',' }}
+                                        @endfor
+                                    </td>
                                     <td class="text-center">{{ $order->price_order }}</td>
                                     <td class="text-center">{{ $order->note }}</td>
                                     <td class="text-center"><button type="button" class="btn btn-warning">Chưa
                                             duyệt</button></td>
                                     <td class="text-center">
-                                        <button class="btn btn-warning btn-rounded btn-condensed btn-sm"><span
-                                                class="fa fa-check"></span></button>
-                                        <a href="{{ route('order.detail',$order->id) }}"><button
-                                                class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
-                                                    class="fa fa-info"></span></button></a>
-                                        <button class="btn btn-danger btn-rounded btn-condensed btn-sm"><span class="fa fa-times"></span></button>
+                                        <a href="{{ route('cart.update.get',$order->id) }}">
+                                            <button class="btn btn-warning btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-check"></span>
+                                            </button>
+                                        </a>
+                                        <a href="{{ route('order.detail',$order->id) }}">
+                                            <button class="btn btn-primary btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-info"></span>
+                                            </button>
+                                        </a>
+                                        
+                                        <a href="">
+                                           <button class="btn btn-danger btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-times"></span>
+                                           </button>
+                                        </a>
                                     </td>
                                 </tr>
                             @endforeach

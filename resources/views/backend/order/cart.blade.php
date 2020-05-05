@@ -19,7 +19,7 @@
                             <td>
                                 <div class="media">
                                     <div class="d-flex">
-                                        <!-- <img src="{{ asset("img/product/$item->attributes->image") }}" alt=""> -->
+                                        <img src="'img/product/'$item->attributes->image" alt="">
                                     </div>
                                     <div class="media-body">
                                         <p>{{ $item->name }}</p>
