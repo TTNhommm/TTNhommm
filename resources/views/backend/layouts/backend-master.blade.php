@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<base href="{{ asset('/') }}">
+    <base href="{{ asset('public')}}/">
 <meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 
 <head>
@@ -40,25 +40,9 @@
         <!-- END PAGE CONTENT -->
     </div>
     <!-- END PAGE CONTAINER -->
+
     <!-- MESSAGE BOX-->
-    <div class="message-box animated fadeIn" data-sound="alert" id="mb-remove-row">
-        <div class="mb-container">
-            <div class="mb-middle">
-                <div class="mb-title"><span class="fa fa-times"></span> Xác nhận <strong>xóa</strong> ?</div>
-                <div class="mb-content">
-                    <p>Nếu bạn muốn xóa mục này</p>
-                    <p>Hãy ấn XÓA</p>
-                </div>
-                <div class="mb-footer">
-                    <div class="pull-right">
-                        <button class="btn btn-warning btn-lg mb-control-yes">Xóa</button>
-                        <button class="btn btn-default btn-lg mb-control-close">Hủy</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- END MESSAGE BOX-->
+    
 
     <!-- MESSAGE BOX-->
     <div class="message-box animated fadeIn" data-sound="alert" id="mb-signout">
@@ -71,7 +55,7 @@
                 </div>
                 <div class="mb-footer">
                     <div class="pull-right">
-                        <a href="pages-login.html" class="btn btn-success btn-lg">Yes</a>
+                        <a href="{{ route('admin.logout') }}" class="btn btn-success btn-lg">Yes</a>
                         <button class="btn btn-default btn-lg mb-control-close">No</button>
                     </div>
                 </div>
@@ -90,15 +74,19 @@
     <script src="admin/js/plugins/jquery/jquery-ui.min.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap.min.js"></script>
 
+    <script src="admin/js/plugins/bootstrap/bootstrap-timepicker.min.js"></script>
+    <script src="admin/js/plugins/bootstrap/bootstrap-colorpicker.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap-datepicker.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap-file-input.js"></script>
     <script src="admin/js/plugins/bootstrap/bootstrap-select.js"></script>
     <script src="admin/js/plugins/tagsinput/jquery.tagsinput.min.js"></script>
     <!-- END PLUGINS -->
 
+
+
     <!-- START THIS PAGE PLUGINS-->
     <script src="https://www.google-analytics.com/analytics.js"></script>
-    <script src='admin/js/plugins/icheck/icheck.min.js'></script>
+    <script src="admin/js/plugins/icheck/icheck.min.js"></script>
     <script src="admin/js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
     <script src="admin/js/plugins/datatables/jquery.dataTables.min.js"></script>
     <script src="admin/js/plugins/scrolltotop/scrolltopcontrol.js"></script>
@@ -111,7 +99,6 @@
     <script src='admin/js/plugins/jvectormap/jquery-jvectormap-world-mill-en.js'></script>
     <script src='admin/js/plugins/bootstrap/bootstrap-datepicker.js'></script>
     <script src="admin/js/plugins/owl/owl.carousel.min.js"></script>
-
     <script src="admin/js/plugins/moment.min.js"></script>
     <script src="admin/js/plugins/daterangepicker/daterangepicker.js"></script>
     <!-- END THIS PAGE PLUGINS-->
@@ -124,6 +111,20 @@
 
     <script src="admin/js/demo_dashboard.js"></script>
     <!-- END TEMPLATE -->
+    <script>
+        $(function(){
+            //Spinner
+            $(".spinner_default").spinner()
+            $(".spinner_decimal").spinner({step: 0.01, numberFormat: "n"});                
+            //End spinner
+            
+            //Datepicker
+            $('#dp-2').datepicker();
+            $('#dp-3').datepicker({startView: 2});
+            $('#dp-4').datepicker({startView: 1});                
+            //End Datepicker
+        });
+    </script>        
     <!-- END SCRIPTS -->
 
     <!-- COUNTERS // NOT INCLUDED IN TEMPLATE -->
@@ -167,6 +168,36 @@
     </noscript>
     <!-- END YANDEX -->
     <!-- END COUNTERS // NOT INCLUDED IN TEMPLATE -->
+    <script>
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function (e) {
+                    $('#img_upload').attr('src', e.target.result);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#filename").change(function () {
+            readURL(this);
+        });
+
+    </script>
+
+<script>
+    $(".notiDelete").click(function(){
+    $("#mb-remove-row").addClass("open");
+    });
+</script>
+<script>
+    var data = document.getElementById("noti").value;
+    if(!data)
+    {
+        $("#notifi").addClass("open");
+    }
+
+</script>
+
 
 </body>
 

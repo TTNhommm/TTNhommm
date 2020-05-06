@@ -24,12 +24,9 @@
                 <div class="panel-heading">
                     <div class="page-head-text">
                         <h1 class="panel-title"><strong>Quản lý</strong> đơn hàng chưa duyệt</h1>
-                        <a href="{{ route('order-approve')}}">
-                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-check"></span> Đơn hàng đã duyệt</button>
+                        <a href="{{ route('admin.get.cart') }}">
+                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-check"></span> Thêm đơn hàng</button>
                         </a>
-                        {{-- <span class="label label-primary label-form">Quản lý đơn hàng chưa duyệt</span> --}}
-                        {{-- <h1>Quản lý đơn hàng chưa duyệt</h1> --}}
-                        {{-- <p class="page-head-subtitle">Some awesome subtitle goes here</p> --}}
                     </div>
                 </div>
 
@@ -40,89 +37,59 @@
                             <thead>
                                 <tr>
                                     <th width="50" class="text-center">ID</th>
-                                    <th width="200">Tên khách hàng</th>
-                                    {{-- <th width="100">status</th>
-                                    <th width="100">amount</th> --}}
-                                    <th width="200" class="text-center">Email</th>
-                                    <th width="120" class="text-center">Số điện thoại</th>
+                                    <th width="150">Tên khách hàng</th>
+                                    <th width="100" class="text-center">Email</th>
+                                    <th width="100" class="text-center">Số điện thoại</th>
                                     <th width="200" class="text-center">Địa chỉ</th>
-                                    <th width="200" class="text-center">Thông tin đơn hàng</th>
+                                    <th width="300" class="text-center">Thông tin đơn hàng</th>
                                     <th width="200" class="text-center">Tổng thanh toán</th>
                                     <th class="text-center">Chú thích</th>
-                                    <th width="120" class="text-center">Trạng thái</th>
+                                    <th width="80" class="text-center">Trạng thái</th>
                                     <th width="120" class="text-center">Hành động</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr id="trow_1">
-                                    <td class="text-center">1</td>
-                                    <td><strong>Trần Duy Thắng</strong></td>
-                                    {{-- <td><span class="label label-success">New</span></td>
-                                    <td>$430.20</td> --}}
-                                    <td class="text-center">Thang@gmail.com</td>
-                                    <td class="text-center">0944126876</td>
-                                    <td class="text-center">Long Biên, Hà Nội</td>
-                                    <td class="text-center">Apple Macbook Pro 2020</td>
-                                    <td class="text-center">85.800.000 VNĐ</td>
-                                    <td class="text-center">Ship vào giờ hành chính</td>
-                                    <td class="text-center"><button type="button" class="btn btn-warning">Chưa
-                                            duyệt</button></td>
+                            @if($orders)
+                            @foreach($orders as $order)
+                            <?php $order_detail = explode(',',$order->info_order); $key=0; ?>
+                                <tr>
+                                    <td class="text-center">{{ $order->id }}</td>
+                                    <td><strong>{{ $order->nameguest }}</strong></td>                       
+                                    <td class="text-center">{{ $order->emailguest }}</td>
+                                    <td class="text-center">{{ $order->phone }}</td>
+                                    <td class="text-center">{{ $order->address }}</td>
                                     <td class="text-center">
-                                        <button class="btn btn-warning btn-rounded btn-condensed btn-sm"><span
-                                                class="fa fa-check"></span></button>
-                                        <a href="{{ route('order-detail')}}"><button
-                                                class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
-                                                    class="fa fa-info"></span></button></a>
-                                        <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_1');"><span class="fa fa-times"></span></button>
+                                        @for($key =0; $key < count($order_detail); $key +=3)
+                                            {{ $order_detail[$key].' x'.$order_detail[$key+1].' '.$order_detail[$key+2].',' }}
+                                        @endfor
+                                    </td>
+                                    <td class="text-center">{{ $order->price_order }}</td>
+                                    <td class="text-center">{{ $order->note }}</td>
+                                    <td class="text-center">
+                                        <a href="{{route('cart.reset',$order->id)}}">   
+                                            <button type="button" class="btn btn-warning">Chưa duyệt </button>
+                                        </a>
+                                    </td>
+                                    <td class="text-center">
+                                        <a href="{{ route('cart.update.get',$order->id) }}">
+                                            <button class="btn btn-warning btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-check"></span>
+                                            </button>
+                                        </a>
+                                        <a href="{{ route('order.detail',$order->id) }}">
+                                            <button class="btn btn-primary btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-info"></span>
+                                            </button>
+                                        </a>
+                                        <a href="{{ route('cart.delete',['delete',$order->id]) }}">
+                                           <button class="btn btn-danger btn-rounded btn-condensed btn-sm">
+                                                <span class="fa fa-times"></span>
+                                           </button>
+                                        </a>
                                     </td>
                                 </tr>
-                                <tr id="trow_2">
-                                    <td class="text-center">1</td>
-                                    <td><strong>Trần Duy Thắng</strong></td>
-                                    {{-- <td><span class="label label-success">New</span></td>
-                                    <td>$430.20</td> --}}
-                                    <td class="text-center">Thang@gmail.com</td>
-                                    <td class="text-center">0944126876</td>
-                                    <td class="text-center">Long Biên, Hà Nội</td>
-                                    <td class="text-center">Apple Macbook Pro 2020</td>
-                                    <td class="text-center">85.800.000 VNĐ</td>
-                                    <td class="text-center">Ship vào giờ hành chính</td>
-                                    <td class="text-center"><button type="button" class="btn btn-warning">Chưa
-                                            duyệt</button></td>
-                                    <td class="text-center">
-                                        <button class="btn btn-warning btn-rounded btn-condensed btn-sm"><span
-                                                class="fa fa-check"></span></button>
-                                        <a href="{{ route('order-detail')}}"><button
-                                                class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
-                                                    class="fa fa-info"></span></button></a>
-                                        <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_2');"><span class="fa fa-times"></span></button>
-                                    </td>
-                                </tr>
-                                <tr id="trow_3">
-                                    <td class="text-center">1</td>
-                                    <td><strong>Trần Duy Thắng</strong></td>
-                                    {{-- <td><span class="label label-success">New</span></td>
-                                    <td>$430.20</td> --}}
-                                    <td class="text-center">Thang@gmail.com</td>
-                                    <td class="text-center">0944126876</td>
-                                    <td class="text-center">Long Biên, Hà Nội</td>
-                                    <td class="text-center">Apple Macbook Pro 2020</td>
-                                    <td class="text-center">85.800.000 VNĐ</td>
-                                    <td class="text-center">Ship vào giờ hành chính</td>
-                                    <td class="text-center"><button type="button" class="btn btn-warning">Chưa
-                                            duyệt</button></td>
-                                    <td class="text-center">
-                                        <button class="btn btn-warning btn-rounded btn-condensed btn-sm"><span
-                                                class="fa fa-check"></span></button>
-                                        <a href="{{ route('order-detail')}}"><button
-                                                class="btn btn-primary btn-rounded btn-condensed btn-sm"><span
-                                                    class="fa fa-info"></span></button></a>
-                                        <button class="btn btn-danger btn-rounded btn-condensed btn-sm"
-                                            onClick="delete_row('trow_3');"><span class="fa fa-times"></span></button>
-                                    </td>
-                                </tr>
+                            @endforeach
+                            @endif
                             </tbody>
                         </table>
                     </div>
@@ -135,5 +102,4 @@
     <!-- END RESPONSIVE TABLES -->
 
 </div>
-<!-- PAGE CONTENT WRAPPER 
 @stop
