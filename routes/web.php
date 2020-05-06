@@ -6,9 +6,9 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
      Route::group(['prefix'=>'category'],function(){
      Route::get('/','AdminCategoryController@index')->name('admin.get.list.category');
      Route::get('/create','AdminCategoryController@create')->name('admin.get.create.category');
-     Route::post('/create','AdminCategoryController@store')->name('post.store');
+     Route::post('/create','AdminCategoryController@store')->name('admin.post.create.category');
      Route::get('/update/{id}','AdminCategoryController@edit')->name('admin.get.edit.category');
-     Route::post('/update/{id}','AdminCategoryController@update')->name('post.update');
+     Route::post('/update/{id}','AdminCategoryController@update')->name('admin.post.update.category');
      Route::get('/{action}/{id}','AdminCategoryController@action')->name('admin.get.action.category');
 });
     //product
@@ -21,5 +21,19 @@ Route::group(['prefix' => 'backend', 'namespace'=>'Backend'],function(){
         Route::get('/{action}/{id}','AdminProductController@action')->name('admin.get.action.product');
    });
 
+});
+//auth
+Route::group(['namespace'=>'Auth'],function(){
+     Route::group(['prefix'=>'auth'],function(){
+          Route::get('/admin','RegisterController@index')->name('get.home.login');
+          // Route::get('/register/admin','UserController@getLoginAdmin')->name('get.login.admin');
+          Route::get('/register','RegisterController@create')->name('get.register');
+          Route::post('/register','RegisterController@store')->name('post.register');
+          Route::get('/login','LoginController@getlogin')->name('admin.get.login');
+          Route::post('/login','LoginController@postlogin')->name('admin.post.login');
+          Route::get('/logout','LoginController@logout')->name('admin.logout');
+          Route::post('/forgetpassword','UserController@action')->name('');
+          Route::post('/resetpassword','UserController@action')->name('');
+     });
 });
 ?>

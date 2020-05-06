@@ -4,10 +4,12 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
-use App\User;
+use Illuminate\Http\Request;
+use App\Models\User;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Auth;
 
 class RegisterController extends Controller
 {
@@ -24,50 +26,43 @@ class RegisterController extends Controller
 
     use RegistersUsers;
 
-    /**
-     * Where to redirect users after registration.
-     *
-     * @var string
-     */
-    protected $redirectTo = RouteServiceProvider::HOME;
-
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-        $this->middleware('guest');
+    public function index()
+    { 
+        $message ="Bạn không đủ thẩm quyền";
+        $user = Auth::user();
+        if($user && $user->level > 1)
+        {
+            dd($message);
+        }
+        else{
+            return view('backend.user.userEmployee');
+        }
     }
-
-    /**
-     * Get a validator for an incoming registration request.
-     *
-     * @param  array  $data
-     * @return \Illuminate\Contracts\Validation\Validator
-     */
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+    public function create()
+    {   
+        $user = Auth::user();
+        if(!$user)
+        {
+            // return view('backend.login');
+            return redirect()->route('admin.get.login');
+        }
+        else{
+            return view('backend.user.userEmployeeCreate');
+        }
+        
     }
-
-    /**
-     * Create a new user instance after a valid registration.
-     *
-     * @param  array  $data
-     * @return \App\User
-     */
-    protected function create(array $data)
+    public function store(Request $req)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-        ]);
+        $users = new  User();
+        $users->name = $req->name;
+        $users->sex = $req->sex;
+        $users->birthday =$req->birthday;
+        $users->email =$req->email;
+        $users->phone =$req->phone;
+        $users->address =$req->address;
+        $users->password=bcrypt($req->password);
+        $users->level =$req->level;
+        $users->save();
+        return redirect()->route('get.register');
     }
 }

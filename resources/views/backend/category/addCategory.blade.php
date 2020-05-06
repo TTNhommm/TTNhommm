@@ -10,11 +10,11 @@
 <div class="page-content-wrap">
     <div class="row">
         <div class="col-md-12">
-            <form class="form-horizontal" method="post" action="{{ route('post.store') }}">
-            @csrf
+            <form class="form-horizontal" method="post" action="{{ route('admin.post.create.category') }}">
+                @csrf
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title"><strong>Thêm  danh mục</strong></h3>
+                        <h3 class="panel-title"><strong>Thêm </strong>danh mục</h3>
                     </div>
                     <div class="panel-body">
                         <div class="row">
@@ -26,32 +26,24 @@
                                             <span class="input-group-addon"><span class="fa fa-pencil"></span></span>
                                             <input type="text" class="form-control" name="name" />
                                         </div>
+                                       @if($errors->has('name'))
+                                        <div class="help-block">
+                                            {!!$errors->first('name')!!}
+                                        </div>
+                                        @endif
                                     </div>
                                 </div>
                             </div>
-                            <!-- <div class="col-md-6">
-                                <div class="form-group">
-                                    <label class="col-md-3 control-label">Ngày thêm</label>
-                                    <div class="col-md-9">
-                                        <div class="input-group">
-                                            <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                            <input type="text" class="form-control datepicker" value="2015-11-01">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div> -->
-                        </div>
-                        <div class="row">
-                            <div class="col-md-offset-2 col-md-6">
-                                <div class="form-group form-check">
-                                    <input type="checkbox" class="form-check-input" name="cate_status" id="exampleCheck1">
-                                    <label class="form-check-label" for="exampleCheck1">Nổi bật</label>
-                                </div>
+                            <div class="col-md-6">
+                                <label class="check" for="exampleCheck1">
+                                    <input type="checkbox" class="icheckbox" checked="checked" name="cate_status"
+                                        id="exampleCheck1" />Nổi bật
+                                </label>
                             </div>
                         </div>
                     </div>
                     <div class="panel-footer">
-                        <!-- <button class="btn btn-default">Xóa trường</button> -->
+                        <button class="btn btn-default">Xóa trường</button>
                         <button type="submit" class="btn btn-primary pull-right">Thêm</button>
                     </div>
                 </div>

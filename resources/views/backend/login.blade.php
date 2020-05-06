@@ -5,16 +5,16 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>        
         <!-- META SECTION -->
-        <title>Atlant - Responsive Bootstrap Admin Template</title>            
+        <base href="{{ asset('public')}}/">
+        <title>Electro Admin</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        
-        <link rel="icon" href="{{ url('/') }}/public/admin/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="admin/favicon.ico" type="image/x-icon" />
         <!-- END META SECTION -->
         
         <!-- CSS INCLUDE -->        
-        <link rel="stylesheet" id="theme" href="{{ url('/') }}/public/admin/css/theme-default.css"/>
+        <link rel="stylesheet" id="theme" href="admin/css/theme-default.css"/>
         <!-- EOF CSS INCLUDE -->    
     </head>
     <body>
@@ -25,39 +25,29 @@
                 <div class="login-logo"></div>
                 <div class="login-body">
                     <div class="login-title"><strong>Xin chào</strong>, mời đăng nhập</div>
-                    <form action="http://aqvatarius.com/themes/atlant/html/index.html" class="form-horizontal" method="post">
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="text" class="form-control" placeholder="Tên đăng nhập"/>
+                    <form action="{{route('admin.post.login')}}" class="form-horizontal" method="post">
+                        @csrf
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input name="name" type="text" class="form-control" placeholder="Tên đăng nhập"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-12">
-                            <input type="password" class="form-control" placeholder="Mật khẩu"/>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <input name="password" type="password" class="form-control" placeholder="Mật khẩu"/>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        {{-- <div class="col-md-6">
-                            <a href="#" class="btn btn-link btn-block">Quên mật khẩu?</a>
-                        </div> --}}
-                        <div class="col-md-12">
-                            <button class="btn btn-warning btn-block">Đăng nhập</button>
+                        <div class="form-group">
+                            <div class="col-md-6">
+                                <a href="#" class="btn btn-link btn-block">Quên mật khẩu?</a>
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit"  class="btn btn-warning btn-block">Đăng nhập</button>
+                            </div>
                         </div>
-                    </div>
                     </form>
                 </div>
-                {{-- <div class="login-footer">
-                    <div class="pull-left">
-                        &copy; 2015 AppName
-                    </div>
-                    <div class="pull-right">
-                        <a href="#">About</a> |
-                        <a href="#">Privacy</a> |
-                        <a href="#">Contact Us</a>
-                    </div>
-                </div> --}}
-            </div>
-            
+            </div
         </div>
     
     <!-- COUNTERS // NOT INCLUDED IN TEMPLATE -->
@@ -98,10 +88,8 @@
         </script>
         <noscript><div><img src="http://mc.yandex.ru/watch/25836617" style="position:absolute; left:-9999px;" alt="" /></div></noscript>     
         <!-- END YANDEX -->
-    <!-- END COUNTERS // NOT INCLUDED IN TEMPLATE -->
-        
+    <!-- END COUNTERS // NOT INCLUDED IN TEMPLATE -->  
     </body>
-
 <!-- Tieu Long Lanh Kute -->
 </html>
 
