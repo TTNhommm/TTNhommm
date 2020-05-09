@@ -3,6 +3,12 @@
 @section('backend-main')
 <!-- PAGE CONTENT WRAPPER -->
 <div class="page-content-wrap">
+    <?php 
+    $product = DB::table('products')->count('*');                  
+    // $order = DB::table('order')->where('status',null)->count('*');       
+    $users = DB::table('users')->count('*');         
+    $cat = DB::table('categories')->count('*');            
+  ?>
     <!-- START WIDGETS -->
     <div class="row">
         <div class="col-md-4">
@@ -16,7 +22,7 @@
                     </div>
                     <div>
                         <div class="widget-title">Mới</div>
-                        <div class="widget-subtitle">Thành viên</div>
+                        <div class="widget-subtitle">Khách hàng</div>
                         <div class="widget-int">1,977</div>
                     </div>
                 </div>
@@ -28,22 +34,21 @@
             <!-- END WIDGET SLIDER -->
         </div>
         <div class="col-md-4">
-            <!-- START WIDGET REGISTRED -->
-            <div class="widget widget-default widget-item-icon" onclick="location.href='pages-address-book.html';">
+            <a href="{{ route('get.home.login')}}" style="text-decoration:none;color:white">
+            <div class="widget widget-primary widget-item-icon">
                 <div class="widget-item-left">
                     <span class="fa fa-user"></span>
                 </div>
                 <div class="widget-data">
-                    <div class="widget-int num-count">375</div>
-                    <div class="widget-title">Thành viên đã đăng ký</div>
+                    <div class="widget-int num-count">{{$users}}</div>
+                    <div class="widget-title">Thành viên</div>
                     <div class="widget-subtitle">Trên website</div>
                 </div>
-                <div class="widget-controls">
-                    <a href="#" class="widget-control-right widget-remove" data-toggle="tooltip" data-placement="top"
-                        title="Remove Widget"><span class="fa fa-times"></span></a>
-                </div>
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right"><span class="fa fa-times"></span></a>
+                </div>     
+            </a>                       
             </div>
-            <!-- END WIDGET REGISTRED -->
         </div>
         <div class="col-md-4">
             <!-- START WIDGET CLOCK -->
@@ -67,6 +72,55 @@
                 </div>
             </div>
             <!-- END WIDGET CLOCK -->
+        </div>
+        <div class="col-md-4">
+            <a href="{{ route('admin.get.list.product')}}" style="text-decoration:none;color:white">
+            <div class="widget widget-danger widget-item-icon">
+                <div class="widget-item-left">
+                    <span class="fa fa-laptop"></span>
+                </div>
+                <div class="widget-data">
+                    <div class="widget-int num-count">{{$product}}</div>
+                    <div class="widget-title">Sản phẩm</div>
+                    <div class="widget-subtitle">Trên website</div>
+                </div>
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right"><span class="fa fa-times"></span></a>
+                </div>                            
+            </div>
+        </a>
+        </div>
+        <div class="col-md-4">
+            <a href="{{ route('admin.get.list.category')}}" style="text-decoration:none;color:white">
+            <div class="widget widget-success widget-item-icon">
+                <div class="widget-item-left">
+                    <span class="fa fa-briefcase"></span>
+                </div>
+                <div class="widget-data">
+                    <div class="widget-int num-count">{{$cat}}</div>
+                    <div class="widget-title">Danh mục</div>
+                    <div class="widget-subtitle">Trên website</div>
+                </div>
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right"><span class="fa fa-times"></span></a>
+                </div>                            
+            </div>
+            </a>
+        </div>
+        <div class="col-md-4">
+            <div class="widget widget-info widget-item-icon">
+                <div class="widget-item-left">
+                    <span class="fa fa-shopping-cart"></span>
+                </div>
+                <div class="widget-data">
+                    <div class="widget-int num-count">599</div>
+                    <div class="widget-title">Đơn hàng</div>
+                    <div class="widget-subtitle">Trên website</div>
+                </div>
+                <div class="widget-controls">                                
+                    <a href="#" class="widget-control-right"><span class="fa fa-times"></span></a>
+                </div>                            
+            </div>
         </div>
     </div>
     <!-- END WIDGETS -->

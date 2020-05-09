@@ -5,7 +5,8 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>        
         <!-- META SECTION -->
-        <base href="{{ asset('/')}}">
+        {{-- <base href="{{ asset('/')}}"> --}}
+        <base href="{{ asset('public')}}/">
         <title>Electro Admin</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
