@@ -16,21 +16,22 @@
             <div class="panel panel-default">
                 <div class="panel-heading">
                     <div class="row">
-                        <div class="page-head-text col-md-6">
+                        <div class="page-head-text col-md-4">
                             <h1 class="panel-title"><strong>Quản lý</strong> sản phẩm</h1>
                         </div>
-                        <div class="page-head-controls col-md-6">
+                        <div class="page-head-controls col-md-8">'.'
                             <div class="row">
                                 <div class="col-md-9">
                                     <form action="">
                                         <div class="input-group" style="display: inline-flex;">
                                             <span class="input-group-addon"><span class="fa fa-search"></span></span>
-                                            <input name="name" type="text" size="30" class="form-control"
-                                                placeholder="Vui lòng nhập sản phẩm cần tìm kiếm"
+                                            <input name="name" type="text" class="form-control"
+                                                placeholder="Nhập sản phẩm cần tìm kiếm"
                                                 value="{{ \Request::get('name') }}">
                                             <div class="form-group" style="margin:0px">
-                                                <select class="form-control select" name="cate" id="">
-                                                    <option>Danh mục</option>
+                                                <!-- <label for="inputState">Danh mục</label> -->
+                                                <select class="form-control select" name="cate" id="inputState">
+                                                    <!-- <option>Danh mục</option> -->
                                                     @if($categories)
                                                     @foreach($categories as $item)
                                                     <option value="{{ $item->id }}"
@@ -49,7 +50,7 @@
                                 </div>
                                 <div class="col-md-3">
                                     <a href="{{ route('admin.get.create.product')}}">
-                                        <button class="btn btn-primary btn-rounded pull-right" style="width:100%"><span
+                                        <button class="btn btn-primary btn-rounded" style="width:100%"><span
                                                 class="fa fa-plus"></span> Thêm
                                             sản phẩm</button>
                                     </a>
