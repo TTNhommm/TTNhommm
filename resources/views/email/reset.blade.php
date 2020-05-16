@@ -5,8 +5,7 @@
 <!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
 <head>        
         <!-- META SECTION -->
-         <base href="{{ asset('/')}}">
-        <!-- <base href="{{ asset('public')}}/"> -->
+        <base href="{{ asset('/')}}">
         <title>Electro Admin</title>            
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -25,27 +24,40 @@
             <div class="login-box animated fadeInDown">
                 <div class="login-logo"></div>
                 <div class="login-body">
-                    <div class="login-title"><strong>Xin chào</strong>, mời đăng nhập</div>
-                    <form action="{{route('admin.post.login')}}" class="form-horizontal" method="post">
+                    <div class="login-title"><strong>Xin chào</strong>,lấy lại mật khẩu</div>
+                    <form action="{{ route('admin.post.resetpassword')}}" class="form-horizontal" method="post">
                         @csrf
+                        @if($checkemail)
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input name="name" type="text" class="form-control" placeholder="Tên đăng nhập"/>
+                                <input type="hidden" name="id" value="{{ $checkemail->id }}">
+                                <input name="name" type="text" class="form-control" placeholder="Username" value="{{ $checkemail->name }}"/>
                             </div>
                         </div>
                         <div class="form-group">
                             <div class="col-md-12">
-                                <input name="password" type="password" class="form-control" placeholder="Mật khẩu"/>
+                                <input name="password" type="password" class="form-control" placeholder="Mật khẩu mới"/>
                             </div>
                         </div>
                         <div class="form-group">
-                            <div class="col-md-6">
-                                <a href="{{ route('admin.get.forgetpassword') }}" class="btn btn-link btn-block">Quên mật khẩu?</a>
-                            </div>
-                            <div class="col-md-6">
-                                <button type="submit"  class="btn btn-warning btn-block">Đăng nhập</button>
+                            <div class="col-md-12">
+                                <input name="resetpassword" type="password" class="form-control" placeholder="Nhập lại mật khẩu"/>
                             </div>
                         </div>
+                        <div class="form-group">
+                            <div class="col-md-12">
+                                <h3 style='color:red;'>{{ $errors }}</h3>
+                            </div>
+                        </div>
+                        @endif
+                        <div class="form-group">
+                            <div class="col-md-6">
+                            </div>
+                            <div class="col-md-6">
+                                <button type="submit"  class="btn btn-warning btn-block">Lấy lại mật khẩu</button>
+                            </div>
+                        </div>
+                       
                     </form>
                 </div>
             </div
