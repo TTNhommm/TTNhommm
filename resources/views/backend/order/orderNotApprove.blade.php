@@ -25,7 +25,7 @@
                     <div class="page-head-text">
                         <h1 class="panel-title"><strong>Quản lý</strong> đơn hàng chưa duyệt</h1>
                         <a href="{{ route('admin.get.cart') }}">
-                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-check"></span> Thêm đơn hàng</button>
+                            <button class="btn btn-primary btn-rounded pull-right"><span class="fa fa-plus"></span> Thêm đơn hàng</button>
                         </a>
                     </div>
                 </div>
